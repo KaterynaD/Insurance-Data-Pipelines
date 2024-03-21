@@ -1,0 +1,1 @@
+plink -i C:\ssh\cse-dba.ppk -batch tabadmin@tabprod-host.cseinsurance.net /home/tabadmin/Critical_RefreshAndSubscription.sh

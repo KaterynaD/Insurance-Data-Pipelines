@@ -1,0 +1,1 @@
+"C:\4SightBI\design-tools\data-integration\KitchenMegaMemory.bat" /rep:SPINN  /job:JB_Load_Warehouse /level:Detailed /log:C:\4SightBI_Data\SPINN\Logs\DWLoad.log
