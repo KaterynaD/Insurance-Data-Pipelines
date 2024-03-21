@@ -1,0 +1,2128 @@
+<transformation>
+  <info>
+    <name>TR_STG_CLAIMTRANSACTION_ISCS</name>
+    <description>Loads the stg_claimtransaction table from the stg_claimtransaction.csv</description>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;Custom_ETL&#x2f;Custom_Staging_Transformations</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit/>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+         <slaveserver><name>SLAVE ONE</name><hostname>192.168.2.101</hostname><port>3306</port><webAppName/><username>&#x24;&#x7b;FSBI_DB_REDSHIFT_USERNAME&#x7d;</username><password>Encrypted 2be98afc86aa7f2e4a418bd63c99dbdde</password><proxy_hostname/><proxy_port/><non_proxy_hosts/><master>Y</master><sslMode>N</sslMode></slaveserver>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>admin</created_user>
+  <created_date>2011&#x2f;09&#x2f;26 23&#x3a;30&#x3a;50.000</created_date>
+  <modified_user>admin</modified_user>
+  <modified_date>2023&#x2f;09&#x2f;13 13&#x3a;46&#x3a;24.829</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>4SBI_DataWarehouse</name>
+    <server>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_DATABASENAME&#x7d;</database>
+    <port>-1</port>
+    <username>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>4SBI_Redshift</name>
+    <server>&#x24;&#x7b;FSBI_DB_REDSHIFT_HOSTNAME&#x7d;</server>
+    <type>REDSHIFT</type>
+    <access>Native</access>
+    <database>pentaho</database>
+    <port>5439</port>
+    <username>&#x24;&#x7b;FSBI_DB_REDSHIFT_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_REDSHIFT_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_REDSHIFT.tcpKeepAlive</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5439</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>4SBI_Staging</name>
+    <server>&#x24;&#x7b;FSBI_DB_STAGING_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_STAGING_DATABASENAME&#x7d;</database>
+    <port>-1</port>
+    <username>&#x24;&#x7b;FSBI_DB_STAGING_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_STAGING_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PREFERRED_SCHEMA_NAME</code><attribute>dbo</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>AgileBI</name>
+    <server>localhost</server>
+    <type>MONETDB</type>
+    <access>Native</access>
+    <database>pentaho-instaview</database>
+    <port>50000</port>
+    <username>monetdb</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <read_only>true</read_only>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>50000</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>CSE_BI</name>
+    <server>&#x24;&#x7b;FSBI_DB_STAGING_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>CSE_BI</database>
+    <port>-1</port>
+    <username>&#x24;&#x7b;FSBI_DB_STAGING_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_STAGING_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PREFERRED_SCHEMA_NAME</code><attribute>dbo</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>EC2_MSSQL_CSE_DataWarehouse</name>
+    <server>&#x24;&#x7b;EC2_MSSQL_CSE_DATAWAREHOUSE_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;EC2_MSSQL_CSE_DATAWAREHOUSE_DATABASENAME&#x7d;</database>
+    <port>1433</port>
+    <username>&#x24;&#x7b;EC2_MSSQL_CSE_DATAWAREHOUSE_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;EC2_MSSQL_CSE_DATAWAREHOUSE_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>SET NOCOUNT ON&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>ISCS_CSE_DataWarehouse</name>
+    <server>&#x24;&#x7b;ISCS_CSE_DB_DATAWAREHOUSE_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;ISCS_CSE_DB_DATAWAREHOUSE_DATABASENAME&#x7d;</database>
+    <port>1433</port>
+    <username>&#x24;&#x7b;ISCS_CSE_DB_DATAWAREHOUSE_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;ISCS_CSE_DB_DATAWAREHOUSE_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>SET NOCOUNT ON&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Mkt01</name>
+    <server>REMOVED</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>prodCSE</database>
+    <port>-1</port>
+    <username>REMOVED</username>
+    <password>REMOVED</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Prod_DB</name>
+    <server>&#x24;&#x7b;FSBI_DB_SOURCE_HOSTNAME&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_SOURCE_DATABASENAME&#x7d;</database>
+    <port>3306</port>
+    <username>&#x24;&#x7b;FSBI_DB_SOURCE_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_SOURCE_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>RDS_MSSQL_CSE_DataWarehouse</name>
+    <server>&#x24;&#x7b;RDS_MSSQL_CSE_DATAWAREHOUSE_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;RDS_MSSQL_CSE_DATAWAREHOUSE_DATABASENAME&#x7d;</database>
+    <port>1433</port>
+    <username>&#x24;&#x7b;RDS_MSSQL_CSE_DATAWAREHOUSE_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;RDS_MSSQL_CSE_DATAWAREHOUSE_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>SET NOCOUNT ON&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Redshift</name>
+    <server>&#x24;&#x7b;FSBI_DB_REDSHIFT_HOSTNAME&#x7d;</server>
+    <type>REDSHIFT</type>
+    <access>Native</access>
+    <database>pentaho</database>
+    <port>5439</port>
+    <username>&#x24;&#x7b;FSBI_DB_REDSHIFT_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_REDSHIFT_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_REDSHIFT.tcpKeepAlive</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5439</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Source_DB</name>
+    <server>&#x24;&#x7b;FSBI_DB_SOURCE_HOSTNAME&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_SOURCE_DATABASENAME&#x7d;</database>
+    <port>3306</port>
+    <username>&#x24;&#x7b;FSBI_DB_SOURCE_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_SOURCE_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.rewriteBatchedStatements</code><attribute>true</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCompression</code><attribute>true</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>INITIAL_POOL_SIZE</code><attribute>1</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MAXIMUM_POOL_SIZE</code><attribute>2</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>Y</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Source_DB_READ</name>
+    <server>&#x24;&#x7b;SOURCE_DB_READ_HOSTNAME&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;SOURCE_DB_READ_DATABASENAME&#x7d;</database>
+    <port>3306</port>
+    <username>&#x24;&#x7b;SOURCE_DB_READ_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;SOURCE_DB_READ_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.rewriteBatchedStatements</code><attribute>true</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCompression</code><attribute>true</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>INITIAL_POOL_SIZE</code><attribute>1</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MAXIMUM_POOL_SIZE</code><attribute>2</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>Y</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>Javascript&#x3a; Convert Date Formats 2</from><to>If field value is null 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Javascript&#x3a; Convert Date Formats 3</from><to>If field value is null 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Javascript&#x3a; Convert Date Formats 4</from><to>If field value is null 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input</from><to>Switch &#x2f; Case</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input</from><to>Switch &#x2f; Case 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case 2</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input</from><to>Switch &#x2f; Case 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case 3</from><to>Dummy &#x28;do nothing&#x29; 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input</from><to>Switch &#x2f; Case 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case 4</from><to>Dummy &#x28;do nothing&#x29; 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants 1</from><to>Calculator 1</to><enabled>Y</enabled> </hop>
+  <hop> <from>If field value is null 2</from><to>Add constants 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants 2</from><to>Calculator 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 2</from><to>STG_CLAIMTRANSACTION &#x28;ExpectedRecoveryChangeAmt&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>If field value is null 3</from><to>Add constants 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants 3</from><to>Calculator 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 3</from><to>STG_CLAIMTRANSACTION &#x28;PaidAmt&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>If field value is null 4</from><to>Add constants 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants 4</from><to>Calculator 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 4</from><to>STG_CLAIMTRANSACTION &#x28;PostedRecoveryAmt&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string 2</from><to>Javascript&#x3a; Convert Date Formats 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Javascript&#x3a; Convert Date Formats</from><to>If field value is null</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input 2</from><to>Slkup&#x3a; Initial Reserve</to><enabled>Y</enabled> </hop>
+  <hop> <from>If field value is null</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Slkup&#x3a; Initial Reserve</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 1</from><to>STG_CLAIMTRANSACTION &#x28;ReserveChangeAmt&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Slkup&#x3a; Initial Reserve</from><to>Add constants 1</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Add constants</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants</from><to>Add constants 1</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string 3</from><to>Javascript&#x3a; Convert Date Formats 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string </from><to>Javascript&#x3a; Convert Date Formats</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case</from><to>Replace in string </to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case 2</from><to>Replace in string 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case 3</from><to>Javascript&#x3a; Convert Date Formats 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case 4</from><to>Replace in string 3</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>Add constants</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>ct_subtypeCd</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x7e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1090</xloc>
+      <yloc>77</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 1</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>plus</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>1</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>plusChar</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>A</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1238</xloc>
+      <yloc>77</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>plus</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>2</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>plusChar</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>B</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>967</xloc>
+      <yloc>264</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 3</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>plus</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>3</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>plusChar</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>C</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>842</xloc>
+      <yloc>549</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 4</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>plus</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>4</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>plusChar</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>D</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>961</xloc>
+      <yloc>718</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 1</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>CT_SEQUENCE2</field_name>
+<calc_type>ADD</calc_type>
+<field_a>ct_sequence</field_a>
+<field_b>plus</field_b>
+<field_c/>
+<value_type>Integer</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>CLAIMTRANSACTION_UNIQUEID2</field_name>
+<calc_type>ADD</calc_type>
+<field_a>CLAIMTRANSACTION_UNIQUEID</field_a>
+<field_b>plusChar</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1386</xloc>
+      <yloc>77</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>CT_SEQUENCE2</field_name>
+<calc_type>ADD</calc_type>
+<field_a>ct_sequence</field_a>
+<field_b>plus</field_b>
+<field_c/>
+<value_type>Integer</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>CLAIMTRANSACTION_UNIQUEID2</field_name>
+<calc_type>ADD</calc_type>
+<field_a>CLAIMTRANSACTION_UNIQUEID</field_a>
+<field_b>plusChar</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1121</xloc>
+      <yloc>264</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 3</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>CT_SEQUENCE2</field_name>
+<calc_type>ADD</calc_type>
+<field_a>ct_sequence</field_a>
+<field_b>plus</field_b>
+<field_c/>
+<value_type>Integer</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>CLAIMTRANSACTION_UNIQUEID2</field_name>
+<calc_type>ADD</calc_type>
+<field_a>CLAIMTRANSACTION_UNIQUEID</field_a>
+<field_b>plusChar</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>965</xloc>
+      <yloc>549</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 4</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>CT_SEQUENCE2</field_name>
+<calc_type>ADD</calc_type>
+<field_a>ct_sequence</field_a>
+<field_b>plus</field_b>
+<field_c/>
+<value_type>Integer</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>CLAIMTRANSACTION_UNIQUEID2</field_name>
+<calc_type>ADD</calc_type>
+<field_a>CLAIMTRANSACTION_UNIQUEID</field_a>
+<field_b>plusChar</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1111</xloc>
+      <yloc>717</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>444</xloc>
+      <yloc>175</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>449</xloc>
+      <yloc>332</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 3</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>449</xloc>
+      <yloc>458</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 4</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>456</xloc>
+      <yloc>625</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Slkup&#x3a; Initial Reserve</send_true_to>
+<send_false_to>Add constants</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>ct_typeCode</leftvalue>
+   <function>&#x3d;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>Indemnity-Adjust Reserve</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>ReserveChangeAmt</leftvalue>
+   <function>&#x3e;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>BigNumber</type><text>0</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask>&#x23;.&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x3b;-&#x23;.&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;</mask></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>942</xloc>
+      <yloc>77</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>If field value is null</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <replaceAllByValue/>
+      <replaceAllMask/>
+      <selectFields>N</selectFields>
+      <selectValuesType>Y</selectValuesType>
+      <setEmptyStringAll>Y</setEmptyStringAll>
+    <valuetypes>
+      <valuetype>
+        <name>Number</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_NUMBER&#x7d;</value>
+        <mask/>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      <valuetype>
+        <name>String</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_TEXT&#x7d;</value>
+        <mask/>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      <valuetype>
+        <name>Date</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_DATE&#x7d;</value>
+        <mask>MM&#x2f;dd&#x2f;yyyy</mask>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      </valuetypes>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>794</xloc>
+      <yloc>77</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>If field value is null 2</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <replaceAllByValue/>
+      <replaceAllMask/>
+      <selectFields>N</selectFields>
+      <selectValuesType>Y</selectValuesType>
+      <setEmptyStringAll>Y</setEmptyStringAll>
+    <valuetypes>
+      <valuetype>
+        <name>Number</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_NUMBER&#x7d;</value>
+        <mask/>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      <valuetype>
+        <name>String</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_TEXT&#x7d;</value>
+        <mask/>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      <valuetype>
+        <name>Date</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_DATE&#x7d;</value>
+        <mask>MM&#x2f;dd&#x2f;yyyy</mask>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      </valuetypes>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>813</xloc>
+      <yloc>264</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>If field value is null 3</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <replaceAllByValue/>
+      <replaceAllMask/>
+      <selectFields>N</selectFields>
+      <selectValuesType>Y</selectValuesType>
+      <setEmptyStringAll>Y</setEmptyStringAll>
+    <valuetypes>
+      <valuetype>
+        <name>Number</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_NUMBER&#x7d;</value>
+        <mask/>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      <valuetype>
+        <name>String</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_TEXT&#x7d;</value>
+        <mask/>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      <valuetype>
+        <name>Date</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_DATE&#x7d;</value>
+        <mask>MM&#x2f;dd&#x2f;yyyy</mask>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      </valuetypes>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>722</xloc>
+      <yloc>550</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>If field value is null 4</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <replaceAllByValue/>
+      <replaceAllMask/>
+      <selectFields>N</selectFields>
+      <selectValuesType>Y</selectValuesType>
+      <setEmptyStringAll>Y</setEmptyStringAll>
+    <valuetypes>
+      <valuetype>
+        <name>Number</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_NUMBER&#x7d;</value>
+        <mask/>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      <valuetype>
+        <name>String</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_TEXT&#x7d;</value>
+        <mask/>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      <valuetype>
+        <name>Date</name>
+        <value>&#x24;&#x7b;FSBI_DEFAULT_DATE&#x7d;</value>
+        <mask>MM&#x2f;dd&#x2f;yyyy</mask>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      </valuetypes>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>811</xloc>
+      <yloc>719</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Javascript&#x3a; Convert Date Formats</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; &#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#xa;&#x2f;&#x2f; Convert dates based on the format specified by the variable&#xa;&#x2f;&#x2f; FSBI_DATE_FORMAT in the kettle.properties file&#xa;&#x2f;&#x2f; &#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#xa;&#xa;&#x2f;&#x2f; Get the default format and date&#xa;var dateFormat &#x3d; getVariable&#x28;&#x22;FSBI_DATE_FORMAT&#x22;,&#x22;yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS&#x22;&#x29;&#x3b;&#xa;var defaultDate &#x3d; getVariable&#x28;&#x22;FSBI_DEFAULT_DATE&#x22;,&#x22;01&#x2f;01&#x2f;1900&#x22;&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2f; Initialize the date variables&#xa;var etl_extract_date &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;var etl_ct_transactionDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;var etl_ct_accountingDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;var etl_ct_changeDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xd;&#xa;var etl_BookDt &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2f; Convert each date&#xa;try &#x7b;&#xa;  etl_extract_date &#x3d; str2date&#x28;extract_date,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_transactionDate &#x3d; str2date&#x28;ct_transactionDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_accountingDate &#x3d; str2date&#x28;ct_accountingDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_changeDate &#x3d; str2date&#x28;ct_changeDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xd;&#xa;&#xd;&#xa;try &#x7b;&#xd;&#xa;  etl_BookDt &#x3d; str2date&#x28;BookDt,dateFormat&#x29;&#x3b;&#xd;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>etl_ct_transactionDate</name>
+        <rename>ct_transactionDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_ct_accountingDate</name>
+        <rename>ct_accountingDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_ct_changeDate</name>
+        <rename>ct_changeDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_BookDt</name>
+        <rename>BookDt</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>646</xloc>
+      <yloc>77</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Javascript&#x3a; Convert Date Formats 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; &#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#xa;&#x2f;&#x2f; Convert dates based on the format specified by the variable&#xa;&#x2f;&#x2f; FSBI_DATE_FORMAT in the kettle.properties file&#xa;&#x2f;&#x2f; &#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#xa;&#xa;&#x2f;&#x2f; Get the default format and date&#xa;var dateFormat &#x3d; getVariable&#x28;&#x22;FSBI_DATE_FORMAT&#x22;,&#x22;yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS&#x22;&#x29;&#x3b;&#xa;var defaultDate &#x3d; getVariable&#x28;&#x22;FSBI_DEFAULT_DATE&#x22;,&#x22;01&#x2f;01&#x2f;1900&#x22;&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2f; Initialize the date variables&#xa;&#xa;var etl_ct_transactionDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;var etl_ct_accountingDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;var etl_ct_changeDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xd;&#xa;var etl_BookDt &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;&#xa;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_transactionDate &#x3d; str2date&#x28;ct_transactionDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_accountingDate &#x3d; str2date&#x28;ct_accountingDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_changeDate &#x3d; str2date&#x28;ct_changeDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xd;&#xa;&#xd;&#xa;try &#x7b;&#xd;&#xa;  etl_BookDt &#x3d; str2date&#x28;BookDt,dateFormat&#x29;&#x3b;&#xd;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>etl_ct_transactionDate</name>
+        <rename>ct_transactionDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_ct_accountingDate</name>
+        <rename>ct_accountingDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_ct_changeDate</name>
+        <rename>ct_changeDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_BookDt</name>
+        <rename>BookDt</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>659</xloc>
+      <yloc>264</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Javascript&#x3a; Convert Date Formats 3</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; &#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#xa;&#x2f;&#x2f; Convert dates based on the format specified by the variable&#xa;&#x2f;&#x2f; FSBI_DATE_FORMAT in the kettle.properties file&#xa;&#x2f;&#x2f; &#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#xa;&#xa;&#x2f;&#x2f; Get the default format and date&#xa;var dateFormat &#x3d; getVariable&#x28;&#x22;FSBI_DATE_FORMAT&#x22;,&#x22;yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS&#x22;&#x29;&#x3b;&#xa;var defaultDate &#x3d; getVariable&#x28;&#x22;FSBI_DEFAULT_DATE&#x22;,&#x22;01&#x2f;01&#x2f;1900&#x22;&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2f; Initialize the date variables&#xa;var etl_ct_transactionDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;var etl_ct_accountingDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;var etl_ct_changeDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xd;&#xa;var etl_BookDt &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2f; Convert each date&#xa;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_transactionDate &#x3d; str2date&#x28;ct_transactionDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_accountingDate &#x3d; str2date&#x28;ct_accountingDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_changeDate &#x3d; str2date&#x28;ct_changeDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xd;&#xa;&#xd;&#xa;try &#x7b;&#xd;&#xa;  etl_BookDt &#x3d; str2date&#x28;BookDt,dateFormat&#x29;&#x3b;&#xd;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>etl_ct_transactionDate</name>
+        <rename>ct_transactionDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_ct_accountingDate</name>
+        <rename>ct_accountingDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_ct_changeDate</name>
+        <rename>ct_changeDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_BookDt</name>
+        <rename>BookDt</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>547</xloc>
+      <yloc>550</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Javascript&#x3a; Convert Date Formats 4</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; &#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#xa;&#x2f;&#x2f; Convert dates based on the format specified by the variable&#xa;&#x2f;&#x2f; FSBI_DATE_FORMAT in the kettle.properties file&#xa;&#x2f;&#x2f; &#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#x2a;&#xa;&#xa;&#x2f;&#x2f; Get the default format and date&#xa;var dateFormat &#x3d; getVariable&#x28;&#x22;FSBI_DATE_FORMAT&#x22;,&#x22;yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS&#x22;&#x29;&#x3b;&#xa;var defaultDate &#x3d; getVariable&#x28;&#x22;FSBI_DEFAULT_DATE&#x22;,&#x22;01&#x2f;01&#x2f;1900&#x22;&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2f; Initialize the date variables&#xa;&#xa;var etl_ct_transactionDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;var etl_ct_accountingDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;var etl_ct_changeDate &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xd;&#xa;var etl_BookDt &#x3d; str2date&#x28;defaultDate, &#x22;MM&#x2f;dd&#x2f;yyyy&#x22;&#x29;&#x3b;&#xa;&#xa;&#x2f;&#x2f; Convert each date&#xa;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_transactionDate &#x3d; str2date&#x28;ct_transactionDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_accountingDate &#x3d; str2date&#x28;ct_accountingDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xa;&#xa;try &#x7b;&#xa;  etl_ct_changeDate &#x3d; str2date&#x28;ct_changeDate,dateFormat&#x29;&#x3b;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;&#xd;&#xa;&#xd;&#xa;try &#x7b;&#xd;&#xa;  etl_BookDt &#x3d; str2date&#x28;BookDt,dateFormat&#x29;&#x3b;&#xd;&#xa;&#x7d; catch&#x28;e&#x29; &#x7b;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>etl_ct_transactionDate</name>
+        <rename>ct_transactionDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_ct_accountingDate</name>
+        <rename>ct_accountingDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_ct_changeDate</name>
+        <rename>ct_changeDate</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>      <field>        <name>etl_BookDt</name>
+        <rename>BookDt</rename>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>661</xloc>
+      <yloc>719</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string </name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>ct_typeCode</in_stream_name>
+        <out_stream_name/>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x28;Adjustment&#x7c;Defense&#x7c;Indemnity&#x7c;Salvage&#x7c;Subrogation&#x29;&#x28;.&#x2a;&#x28; &#x5c;&#x28;Historical&#x5c;&#x29;&#x29;&#x7c;.&#x2a;&#x29;</replace_string>
+        <replace_by_string>&#x24;1-Adjust Reserve&#x24;3</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>498</xloc>
+      <yloc>77</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string 2</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>ct_typeCode</in_stream_name>
+        <out_stream_name/>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x28;Adjustment&#x7c;Defense&#x7c;Indemnity&#x7c;Salvage&#x7c;Subrogation&#x29;&#x28;.&#x2a;&#x28; &#x5c;&#x28;Historical&#x5c;&#x29;&#x29;&#x7c;.&#x2a;&#x29;</replace_string>
+        <replace_by_string>&#x24;1-Adjust Recovery&#x24;3</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>505</xloc>
+      <yloc>264</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string 3</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>ct_typeCode</in_stream_name>
+        <out_stream_name/>
+        <use_regex>yes</use_regex>
+        <replace_string>&#x28;Adjustment&#x7c;Defense&#x7c;Indemnity&#x7c;Salvage&#x7c;Subrogation&#x29;&#x28;.&#x2a;&#x28; &#x5c;&#x28;Historical&#x5c;&#x29;&#x29;&#x7c;.&#x2a;&#x29;</replace_string>
+        <replace_by_string>&#x24;1-Recovery Post&#x24;3</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>511</xloc>
+      <yloc>719</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>STG_CLAIMTRANSACTION &#x28;ExpectedRecoveryChangeAmt&#x29;</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>4SBI_Staging</connection>
+    <schema/>
+    <table>STG_CLAIMTRANSACTION</table>
+    <commit>10000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>SOURCE_SYSTEM</column_name>
+          <stream_name>source_system</stream_name>
+        </field>
+        <field>
+          <column_name>CLAIMTRANSACTION_UNIQUEID</column_name>
+          <stream_name>CLAIMTRANSACTION_UNIQUEID2</stream_name>
+        </field>
+        <field>
+          <column_name>CLAIM_UNIQUEID</column_name>
+          <stream_name>claim_uniqueID</stream_name>
+        </field>
+        <field>
+          <column_name>CT_SEQUENCE</column_name>
+          <stream_name>CT_SEQUENCE2</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TRANSACTIONFLAG</column_name>
+          <stream_name>ct_transactionFlag</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TRANSACTIONDATE</column_name>
+          <stream_name>ct_transactionDate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_ACCOUNTINGDATE</column_name>
+          <stream_name>ct_accountingDate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_CHANGEDATE</column_name>
+          <stream_name>ct_changedate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TYPECODE</column_name>
+          <stream_name>ct_typeCode</stream_name>
+        </field>
+        <field>
+          <column_name>LOADDATE</column_name>
+          <stream_name>LOADDATE</stream_name>
+        </field>
+        <field>
+          <column_name>CT_AMOUNT</column_name>
+          <stream_name>ExpectedRecoveryChangeAmt</stream_name>
+        </field>
+        <field>
+          <column_name>ReserveCd</column_name>
+          <stream_name>ReserveCd</stream_name>
+        </field>
+        <field>
+          <column_name>ReserveTypeCd</column_name>
+          <stream_name>ReserveTypeCd</stream_name>
+        </field>
+        <field>
+          <column_name>BookDt</column_name>
+          <stream_name>BookDt</stream_name>
+        </field>
+        <field>
+          <column_name>coverage_uniqueid</column_name>
+          <stream_name>coverage_uniqueid</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1355</xloc>
+      <yloc>264</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>STG_CLAIMTRANSACTION &#x28;PaidAmt&#x29;</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>4SBI_Staging</connection>
+    <schema/>
+    <table>STG_CLAIMTRANSACTION</table>
+    <commit>10000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>SOURCE_SYSTEM</column_name>
+          <stream_name>source_system</stream_name>
+        </field>
+        <field>
+          <column_name>CLAIMTRANSACTION_UNIQUEID</column_name>
+          <stream_name>CLAIMTRANSACTION_UNIQUEID2</stream_name>
+        </field>
+        <field>
+          <column_name>CLAIM_UNIQUEID</column_name>
+          <stream_name>claim_uniqueID</stream_name>
+        </field>
+        <field>
+          <column_name>CT_SEQUENCE</column_name>
+          <stream_name>CT_SEQUENCE2</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TRANSACTIONFLAG</column_name>
+          <stream_name>ct_transactionFlag</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TRANSACTIONDATE</column_name>
+          <stream_name>ct_transactionDate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_ACCOUNTINGDATE</column_name>
+          <stream_name>ct_accountingDate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_CHANGEDATE</column_name>
+          <stream_name>ct_changedate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TYPECODE</column_name>
+          <stream_name>ct_typeCode</stream_name>
+        </field>
+        <field>
+          <column_name>LOADDATE</column_name>
+          <stream_name>LOADDATE</stream_name>
+        </field>
+        <field>
+          <column_name>CT_AMOUNT</column_name>
+          <stream_name>PaidAmt</stream_name>
+        </field>
+        <field>
+          <column_name>ReserveCd</column_name>
+          <stream_name>ReserveCd</stream_name>
+        </field>
+        <field>
+          <column_name>ReserveTypeCd</column_name>
+          <stream_name>ReserveTypeCd</stream_name>
+        </field>
+        <field>
+          <column_name>BookDt</column_name>
+          <stream_name>BookDt</stream_name>
+        </field>
+        <field>
+          <column_name>coverage_uniqueid</column_name>
+          <stream_name>coverage_uniqueid</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1135</xloc>
+      <yloc>549</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>STG_CLAIMTRANSACTION &#x28;PostedRecoveryAmt&#x29;</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>4SBI_Staging</connection>
+    <schema/>
+    <table>STG_CLAIMTRANSACTION</table>
+    <commit>10000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>SOURCE_SYSTEM</column_name>
+          <stream_name>source_system</stream_name>
+        </field>
+        <field>
+          <column_name>CLAIMTRANSACTION_UNIQUEID</column_name>
+          <stream_name>CLAIMTRANSACTION_UNIQUEID2</stream_name>
+        </field>
+        <field>
+          <column_name>CLAIM_UNIQUEID</column_name>
+          <stream_name>claim_uniqueID</stream_name>
+        </field>
+        <field>
+          <column_name>CT_SEQUENCE</column_name>
+          <stream_name>CT_SEQUENCE2</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TRANSACTIONFLAG</column_name>
+          <stream_name>ct_transactionFlag</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TRANSACTIONDATE</column_name>
+          <stream_name>ct_transactionDate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_ACCOUNTINGDATE</column_name>
+          <stream_name>ct_accountingDate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_CHANGEDATE</column_name>
+          <stream_name>ct_changedate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TYPECODE</column_name>
+          <stream_name>ct_typeCode</stream_name>
+        </field>
+        <field>
+          <column_name>LOADDATE</column_name>
+          <stream_name>LOADDATE</stream_name>
+        </field>
+        <field>
+          <column_name>CT_AMOUNT</column_name>
+          <stream_name>PostedRecoveryAmt</stream_name>
+        </field>
+        <field>
+          <column_name>ReserveCd</column_name>
+          <stream_name>ReserveCd</stream_name>
+        </field>
+        <field>
+          <column_name>ReserveTypeCd</column_name>
+          <stream_name>ReserveTypeCd</stream_name>
+        </field>
+        <field>
+          <column_name>BookDt</column_name>
+          <stream_name>BookDt</stream_name>
+        </field>
+        <field>
+          <column_name>coverage_uniqueid</column_name>
+          <stream_name>coverage_uniqueid</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1261</xloc>
+      <yloc>717</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>STG_CLAIMTRANSACTION &#x28;ReserveChangeAmt&#x29;</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>4SBI_Staging</connection>
+    <schema/>
+    <table>STG_CLAIMTRANSACTION</table>
+    <commit>10000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>SOURCE_SYSTEM</column_name>
+          <stream_name>source_system</stream_name>
+        </field>
+        <field>
+          <column_name>CLAIMTRANSACTION_UNIQUEID</column_name>
+          <stream_name>CLAIMTRANSACTION_UNIQUEID2</stream_name>
+        </field>
+        <field>
+          <column_name>CLAIM_UNIQUEID</column_name>
+          <stream_name>claim_uniqueID</stream_name>
+        </field>
+        <field>
+          <column_name>CT_SEQUENCE</column_name>
+          <stream_name>CT_SEQUENCE2</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TRANSACTIONFLAG</column_name>
+          <stream_name>ct_transactionFlag</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TRANSACTIONDATE</column_name>
+          <stream_name>ct_transactionDate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_ACCOUNTINGDATE</column_name>
+          <stream_name>ct_accountingDate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_CHANGEDATE</column_name>
+          <stream_name>ct_changedate</stream_name>
+        </field>
+        <field>
+          <column_name>CT_TYPECODE</column_name>
+          <stream_name>ct_typeCode</stream_name>
+        </field>
+        <field>
+          <column_name>LOADDATE</column_name>
+          <stream_name>LOADDATE</stream_name>
+        </field>
+        <field>
+          <column_name>CT_AMOUNT</column_name>
+          <stream_name>ReserveChangeAmt</stream_name>
+        </field>
+        <field>
+          <column_name>ReserveCd</column_name>
+          <stream_name>ReserveCd</stream_name>
+        </field>
+        <field>
+          <column_name>ReserveTypeCd</column_name>
+          <stream_name>ReserveTypeCd</stream_name>
+        </field>
+        <field>
+          <column_name>BookDt</column_name>
+          <stream_name>BookDt</stream_name>
+        </field>
+        <field>
+          <column_name>CT_SUBTYPECODE</column_name>
+          <stream_name>ct_subtypeCd</stream_name>
+        </field>
+        <field>
+          <column_name>coverage_uniqueid</column_name>
+          <stream_name>coverage_uniqueid</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1534</xloc>
+      <yloc>77</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Slkup&#x3a; Initial Reserve</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>Table input 2</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>AnnualStatementLineCd</name>
+        <field>AnnualStatementLineCd</field>
+      </key>
+      <key>
+        <name>BookDt</name>
+        <field>BookDt</field>
+      </key>
+      <key>
+        <name>ClaimNumber</name>
+        <field>ClaimNumber</field>
+      </key>
+      <key>
+        <name>ClaimRef</name>
+        <field>ClaimRef</field>
+      </key>
+      <key>
+        <name>ClaimantCd</name>
+        <field>ClaimantCd</field>
+      </key>
+      <key>
+        <name>CoverageCd</name>
+        <field>CoverageCd</field>
+      </key>
+      <key>
+        <name>FeatureCd</name>
+        <field>FeatureCd</field>
+      </key>
+      <key>
+        <name>FeatureSubCd</name>
+        <field>FeatureSubCd</field>
+      </key>
+      <key>
+        <name>FeatureTypeCd</name>
+        <field>FeatureTypeCd</field>
+      </key>
+      <key>
+        <name>ItemNumber</name>
+        <field>ItemNumber</field>
+      </key>
+      <key>
+        <name>LineCd</name>
+        <field>LineCd</field>
+      </key>
+      <key>
+        <name>ReserveCd</name>
+        <field>ReserveCd</field>
+      </key>
+      <key>
+        <name>ReserveTypeCd</name>
+        <field>ReserveTypeCd</field>
+      </key>
+      <key>
+        <name>RiskCd</name>
+        <field>RiskCd</field>
+      </key>
+      <key>
+        <name>CoverageItemCd</name>
+        <field>CoverageItemCd</field>
+      </key>
+      <value>
+        <name>ct_subtypeCd</name>
+        <rename>ct_subtypeCd</rename>
+        <default>&#x7e;</default>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1091</xloc>
+      <yloc>138</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Switch &#x2f; Case</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<fieldname>ReserveChangeAmt</fieldname>
+<use_contains>N</use_contains>
+<case_value_type>Number</case_value_type>
+<case_value_format/>
+<case_value_decimal/>
+<case_value_group/>
+<default_target_step>Replace in string </default_target_step>
+<cases><case><value>0</value>
+<target_step>Dummy &#x28;do nothing&#x29;</target_step>
+</case></cases>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>231</xloc>
+      <yloc>175</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Switch &#x2f; Case 2</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<fieldname>ExpectedRecoveryChangeAmt</fieldname>
+<use_contains>N</use_contains>
+<case_value_type>Number</case_value_type>
+<case_value_format/>
+<case_value_decimal/>
+<case_value_group/>
+<default_target_step>Replace in string 2</default_target_step>
+<cases><case><value>0</value>
+<target_step>Dummy &#x28;do nothing&#x29; 2</target_step>
+</case></cases>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>228</xloc>
+      <yloc>332</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Switch &#x2f; Case 3</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<fieldname>PaidAmt</fieldname>
+<use_contains>N</use_contains>
+<case_value_type>Number</case_value_type>
+<case_value_format/>
+<case_value_decimal/>
+<case_value_group/>
+<default_target_step>Javascript&#x3a; Convert Date Formats 3</default_target_step>
+<cases><case><value>0</value>
+<target_step>Dummy &#x28;do nothing&#x29; 3</target_step>
+</case></cases>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>228</xloc>
+      <yloc>458</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Switch &#x2f; Case 4</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<fieldname>PostedRecoveryAmt</fieldname>
+<use_contains>N</use_contains>
+<case_value_type>Number</case_value_type>
+<case_value_format/>
+<case_value_decimal/>
+<case_value_group/>
+<default_target_step>Replace in string 3</default_target_step>
+<cases><case><value>0</value>
+<target_step>Dummy &#x28;do nothing&#x29; 4</target_step>
+</case></cases>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>240</xloc>
+      <yloc>625</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Source_DB_READ</connection>
+    <sql>select&#xd;&#xa; &#x27;&#x24;&#x7b;SOURCE_SYSTEM&#x7d;&#x27; Source_System,&#xd;&#xa; &#x24;&#x7b;sql_loadDate&#x7d;  as LoadDate,&#xd;&#xa; concat&#x28;right&#x28;concat&#x28;&#x27;000000000&#x27; , cast&#x28;SystemId as char&#x29;&#x29;,9&#x29; , &#x27;-&#x27;&#xd;&#xa;   , right&#x28;cast&#x28;concat&#x28;&#x27;000&#x27; , ifnull&#x28;case when LineCd &#x3d; &#x27;PersonalAuto&#x27; and AnnualStatementLineCd &#x3d; &#x27;051&#x27; then &#x27;211&#x27; else AnnualStatementLineCd end,&#x27;   &#x27;&#x29;&#x29; as char&#x28;6&#x29;&#x29;,3&#x29; , &#x27;-&#x27;&#xd;&#xa;   , right&#x28;cast&#x28;concat&#x28;&#x27;000&#x27; , ifnull&#x28;SublineCd,&#x27;   &#x27;&#x29;&#x29; as char&#x28;6&#x29;&#x29;,3&#x29;&#x29;&#xd;&#xa;  as claimTransaction_uniqueID &#xd;&#xa;,concat&#x28;cast&#x28;ClaimRef as CHAR&#x29;,&#x27;-&#x27;&#xd;&#xa;,cast&#x28;ClaimantCd as char&#x29;,&#x27;-&#x27;&#xd;&#xa;,FeatureCd&#xd;&#xa;&#x29; as claim_uniqueID  &#xd;&#xa;, cast&#x28;concat&#x28;rtrim&#x28;ltrim&#x28;cast&#x28;transactionnumber as char&#x29;&#x29;&#x29;,&#xd;&#xa;  rtrim&#x28;ltrim&#x28;cast&#x28;claimanttransactionnumber as char&#x29;&#x29;&#x29;, rtrim&#x28;ltrim&#x28;cast&#x28;StatSequence as CHAR&#x29;&#x29;&#x29;&#x29; as unsigned&#x29; as ct_sequence&#xd;&#xa;, &#x27;&#x27; as  ct_transactionFlag&#xd;&#xa;, &#x27;&#x27; as ct_statusCode&#xd;&#xa;, date_format&#x28;bookdt,&#x27;&#x25;Y-&#x25;m-&#x25;d&#x27;&#x29; as ct_transactionDate&#xd;&#xa;, date_format&#x28;bookdt,&#x27;&#x25;Y-&#x25;m-&#x25;d&#x27;&#x29; as ct_accountingDate&#xd;&#xa;, &#x27;&#x27; as ct_changedate&#xd;&#xa;, concat&#x28;ReserveCd , &#x27;-&#x27; ,&#xd;&#xa;  ifnull&#x28;ClaimantTransactionCd,&#x27;Payment&#x27;&#x29; , &#xd;&#xa;  case when HistoricPaidAmt &#x3c;&#x3e; 0 or HistoricExpectedRecoveryAmt &#x3c;&#x3e; 0 or HistoricPostedRecoveryAmt &#x3c;&#x3e; 0 or HistoricReserveAmt &#x3c;&#x3e; 0 then &#x27; &#x28;Historical&#x29;&#x27; else &#x27;&#x27; end&#x29; as ct_typeCode&#xd;&#xa;, ReserveChangeAmt &#x2b; ifnull&#x28;HistoricReserveAmt,0.00&#x29; as ReserveChangeAmt&#xd;&#xa;, ExpectedRecoveryChangeAmt &#x2b; ifnull&#x28;HistoricExpectedRecoveryAmt,0.00&#x29; as ExpectedRecoveryChangeAmt&#xd;&#xa;, PaidAmt &#x2b; ifnull&#x28;HistoricPaidAmt,0.00&#x29; as PaidAmt&#xd;&#xa;, PostedRecoveryAmt &#x2b; ifnull&#x28;HistoricPostedRecoveryAmt,0.00&#x29; as PostedRecoveryAmt&#xd;&#xa;, cast&#x28;BookDt as date&#x29; as BookDt&#xd;&#xa;, TransactionCd&#xd;&#xa;, TransactionNumber&#xd;&#xa;, coalesce&#x28;ClaimantCd, &#x27;&#x7e;&#x27;&#x29; as ClaimantCd&#xd;&#xa;, coalesce&#x28;LineCd, &#x27;&#x7e;&#x27;&#x29; as LineCd&#xd;&#xa;, coalesce&#x28;RiskCd, &#x27;&#x7e;&#x27;&#x29; as RiskCd&#xd;&#xa;, coalesce&#x28;CoverageCd, &#x27;&#x7e;&#x27;&#x29; as CoverageCd&#xd;&#xa;, coalesce&#x28;CoverageItemCd, 1&#x29; as CoverageItemCd&#xd;&#xa;, coalesce&#x28;lpad&#x28;ClaimNumber,8,&#x27;0&#x27;&#x29;, &#x27;&#x7e;&#x27;&#x29; as ClaimNumber&#xd;&#xa;, coalesce&#x28;ClaimRef, &#x27;&#x7e;&#x27;&#x29; as ClaimRef&#xd;&#xa;, coalesce&#x28;FeatureCd, &#x27;&#x7e;&#x27;&#x29; as FeatureCd&#xd;&#xa;, coalesce&#x28;FeatureSubCd, &#x27;&#x7e;&#x27;&#x29; as FeatureSubCd&#xd;&#xa;, coalesce&#x28;FeatureTypeCd, &#x27;&#x7e;&#x27;&#x29; as FeatureTypeCd&#xd;&#xa;, coalesce&#x28;ItemNumber, 0&#x29; as ItemNumber&#xd;&#xa;, coalesce&#x28;ReserveCd, &#x27;&#x7e;&#x27;&#x29; as ReserveCd&#xd;&#xa;, coalesce&#x28;ReserveTypeCd, &#x27;&#x7e;&#x27;&#x29; as ReserveTypeCd&#xd;&#xa;, coalesce&#x28;AnnualStatementLineCd, &#x27;&#x7e;&#x27;&#x29; as AnnualStatementLineCd&#xd;&#xa;,replace&#x28;concat&#x28;cast&#x28;policyRef as char&#x29; , &#x27;-&#x27; &#xd;&#xa;               ,ifnull&#x28;case LineCd when &#x27;Liability&#x27; then &#x27;BusinessOwner&#x27; else LineCd end,&#x27;&#x7e;&#x27;&#x29; , &#x27;-&#x27; &#xd;&#xa;               ,ifnull&#x28;RiskCd,&#x27;&#x7e;&#x27;&#x29; , &#x27;-&#x27; &#xd;&#xa;               ,ifnull&#x28;FeatureCd,&#x27;&#x7e;&#x27;&#x29; , &#x27;-&#x27; &#xd;&#xa;               ,ifnull&#x28;CoverageItemCd,&#x27;&#x7e;&#x27;&#x29; , &#x27;-&#x27; &#xd;&#xa;               ,ifnull&#x28;RateAreaName,&#x27;&#x7e;&#x27;&#x29; , &#x27;-&#x27; &#xd;&#xa;			   ,ifnull&#x28;case when LineCd &#x3d; &#x27;PersonalAuto&#x27; and AnnualStatementLineCd &#x3d; &#x27;051&#x27; then &#x27;211&#x27; else AnnualStatementLineCd end,&#x27;&#x7e;&#x27;&#x29; , &#x27;-&#x27; &#xd;&#xa;			   ,ifnull&#x28;SublineCd,&#x27;&#x7e;&#x27;&#x29;, &#x27;-&#x27; &#xd;&#xa;               ,ifnull&#x28;Deductible,&#x27;&#x7e;&#x27;&#x29;, &#x27;-&#x27; &#xd;&#xa;               ,ifnull&#x28;&#x60;limit&#x60;,&#x27;&#x7e;&#x27;&#x29;, &#x27;-&#x7e;-&#x7e;&#x27; 			   			   &#xd;&#xa;			   &#x29;,&#x27; &#x27;,&#x27;&#x7e;&#x27;&#x29; as coverage_uniqueid&#xd;&#xa;from prodcse.ClaimStats &#xd;&#xa;where BookDt &#x3e; &#x24;&#x7b;sql_bookDate&#x7d; and BookDt  &#x3c;&#x3d; cast&#x28;&#x24;&#x7b;sql_currentDate&#x7d; as date&#x29;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>81</xloc>
+      <yloc>333</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table input 2</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Source_DB_READ</connection>
+    <sql>select &#xd;&#xa;  &#x27;INIT&#x27; as ct_subtypeCd&#xd;&#xa;, ClaimantCd&#xd;&#xa;, LineCd&#xd;&#xa;, RiskCd&#xd;&#xa;, CoverageCd&#xd;&#xa;, coalesce&#x28;CoverageItemCd, 1&#x29; as CoverageItemCd&#xd;&#xa;, ClaimNumber&#xd;&#xa;, ClaimRef&#xd;&#xa;, FeatureCd&#xd;&#xa;, FeatureSubCd&#xd;&#xa;, FeatureTypeCd&#xd;&#xa;, ItemNumber&#xd;&#xa;, ReserveCd&#xd;&#xa;, ReserveTypeCd&#xd;&#xa;, AnnualStatementLineCd&#xd;&#xa;, cast&#x28;MIN&#x28;BookDt&#x29; as date&#x29; as BookDt&#xd;&#xa; from prodcse.ClaimStats&#xd;&#xa; where ReserveCd &#x3d; &#x27;Indemnity&#x27;&#xd;&#xa; GROUP BY&#xd;&#xa;  ClaimantCd&#xd;&#xa;, LineCd&#xd;&#xa;, RiskCd&#xd;&#xa;, CoverageCd&#xd;&#xa;, coalesce&#x28;CoverageItemCd, 1&#x29;&#xd;&#xa;, ClaimNumber&#xd;&#xa;, ClaimRef&#xd;&#xa;, FeatureCd&#xd;&#xa;, FeatureSubCd&#xd;&#xa;, FeatureTypeCd&#xd;&#xa;, ItemNumber&#xd;&#xa;, ReserveCd&#xd;&#xa;, ReserveTypeCd&#xd;&#xa;, AnnualStatementLineCd</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1091</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+<attributes><group><name>DataService</name>
+</group></attributes>
+
+</transformation>
