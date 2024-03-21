@@ -1,0 +1,666 @@
+<job>
+  <name>SJB_Custom_or_Changed_Tables_Defaults</name>
+    <description/>
+    <extended_description/>
+    <job_version/>
+    <job_status>0</job_status>
+  <directory>&#x2f;Custom_ETL&#x2f;Custom_Job</directory>
+  <created_user>-</created_user>
+  <created_date>2018&#x2f;06&#x2f;15 10&#x3a;43&#x3a;28.964</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2019&#x2f;07&#x2f;02 10&#x3a;47&#x3a;23.891</modified_date>
+    <parameters>
+    </parameters>
+  <connection>
+    <name>4SBI_DataWarehouse</name>
+    <server>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_DATABASENAME&#x7d;</database>
+    <port>-1</port>
+    <username>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PREFERRED_SCHEMA_NAME</code><attribute>dbo</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>4SBI_Redshift</name>
+    <server>&#x24;&#x7b;FSBI_DB_REDSHIFT_HOSTNAME&#x7d;</server>
+    <type>REDSHIFT</type>
+    <access>Native</access>
+    <database>pentaho</database>
+    <port>5439</port>
+    <username>&#x24;&#x7b;FSBI_DB_REDSHIFT_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_REDSHIFT_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_REDSHIFT.tcpKeepAlive</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5439</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>4SBI_Staging</name>
+    <server>&#x24;&#x7b;FSBI_DB_STAGING_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_STAGING_DATABASENAME&#x7d;</database>
+    <port>-1</port>
+    <username>&#x24;&#x7b;FSBI_DB_STAGING_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_STAGING_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PREFERRED_SCHEMA_NAME</code><attribute>dbo</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>CSE_BI</name>
+    <server>&#x24;&#x7b;FSBI_DB_STAGING_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>CSE_BI</database>
+    <port>-1</port>
+    <username>&#x24;&#x7b;FSBI_DB_STAGING_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_STAGING_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PREFERRED_SCHEMA_NAME</code><attribute>dbo</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Mkt01</name>
+    <server>REMOVED</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>prodCSE</database>
+    <port>-1</port>
+    <username>REMOVED</username>
+    <password>REMOVED</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Prod_DB</name>
+    <server>&#x24;&#x7b;FSBI_DB_SOURCE_HOSTNAME&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_SOURCE_DATABASENAME&#x7d;</database>
+    <port>3306</port>
+    <username>&#x24;&#x7b;FSBI_DB_SOURCE_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_SOURCE_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Redshift</name>
+    <server>&#x24;&#x7b;FSBI_DB_REDSHIFT_HOSTNAME&#x7d;</server>
+    <type>REDSHIFT</type>
+    <access>Native</access>
+    <database>pentaho</database>
+    <port>5439</port>
+    <username>&#x24;&#x7b;FSBI_DB_REDSHIFT_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_REDSHIFT_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_REDSHIFT.tcpKeepAlive</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5439</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Source_DB</name>
+    <server>&#x24;&#x7b;FSBI_DB_SOURCE_HOSTNAME&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_SOURCE_DATABASENAME&#x7d;</database>
+    <port>3306</port>
+    <username>&#x24;&#x7b;FSBI_DB_SOURCE_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_SOURCE_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.rewriteBatchedStatements</code><attribute>true</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCompression</code><attribute>true</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>INITIAL_POOL_SIZE</code><attribute>1</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MAXIMUM_POOL_SIZE</code><attribute>2</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>Y</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Source_DB_READ</name>
+    <server>&#x24;&#x7b;SOURCE_DB_READ_HOSTNAME&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;SOURCE_DB_READ_DATABASENAME&#x7d;</database>
+    <port>3306</port>
+    <username>&#x24;&#x7b;SOURCE_DB_READ_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;SOURCE_DB_READ_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.rewriteBatchedStatements</code><attribute>true</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCompression</code><attribute>true</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useServerPrepStmts</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>INITIAL_POOL_SIZE</code><attribute>1</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MAXIMUM_POOL_SIZE</code><attribute>2</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>Y</attribute></attribute>
+    </attributes>
+  </connection>
+    <slaveservers>
+    </slaveservers>
+<job-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_JOB</id><enabled>Y</enabled><name>ID_JOB</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>JOBNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>START_JOB_ENTRY</id><enabled>N</enabled><name>START_JOB_ENTRY</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></job-log-table>
+<jobentry-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>JOBENTRYNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>RESULT</id><enabled>Y</enabled><name>RESULT</name></field><field><id>NR_RESULT_ROWS</id><enabled>Y</enabled><name>NR_RESULT_ROWS</name></field><field><id>NR_RESULT_FILES</id><enabled>Y</enabled><name>NR_RESULT_FILES</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field><field><id>COPY_NR</id><enabled>N</enabled><name>COPY_NR</name></field></jobentry-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+   <pass_batchid>N</pass_batchid>
+   <shared_objects_file/>
+  <entries>
+    <entry>
+      <name>START</name>
+      <description/>
+      <type>SPECIAL</type>
+      <start>Y</start>
+      <dummy>N</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>Y</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>339</xloc>
+      <yloc>302</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_LOCATION</name>
+      <description/>
+      <type>SQL</type>
+      <sql>insert into DIM_LOCATION	&#xd;&#xa;&#x28;	&#xd;&#xa;Location_ID	,&#xd;&#xa;RECORD_VERSION	,&#xd;&#xa;VALID_FROMDATE	,&#xd;&#xa;VALID_TODATE	,&#xd;&#xa;Location_UniqueId	,&#xd;&#xa;policy_uniqueid,	&#xd;&#xa;policy_id,	&#xd;&#xa;spinnlocation_id,	&#xd;&#xa;Status,	&#xd;&#xa;Location_NaturalKey,	&#xd;&#xa;LocationTypeCd	,&#xd;&#xa;LocationNumber	,&#xd;&#xa;LocationDesc	,&#xd;&#xa;ClassCode	,&#xd;&#xa;ProtectionClass	,&#xd;&#xa;TerritoryCd	,&#xd;&#xa;DistFireHydrant	,&#xd;&#xa;NumBuildings	,&#xd;&#xa;Units	,&#xd;&#xa;BuildingDistance	,&#xd;&#xa;SoilType	,&#xd;&#xa;DistBrushArea	,&#xd;&#xa;DistShoreline	,&#xd;&#xa;ManufacturedModularTrailer	,&#xd;&#xa;HillsideSlope	,&#xd;&#xa;LocationUnmodifiedLiabPremium	,&#xd;&#xa;AcceptableCompRate	,&#xd;&#xa;DiscountAdjusted	,&#xd;&#xa;WildFire	,&#xd;&#xa;BusinessYears	,&#xd;&#xa;BusinessLicenseIssueDt	,&#xd;&#xa;BusinessLicenseExpireDt	,&#xd;&#xa;BusinessLicenseStateCd	,&#xd;&#xa;BusinessLicenseSuspendInd	,&#xd;&#xa;AccreditCareHome	,&#xd;&#xa;FirstYear	,&#xd;&#xa;ReinsuranceGroup,	&#xd;&#xa;BuildingGroup,	&#xd;&#xa;IncomeGroup,	&#xd;&#xa;ContentsGroup,	&#xd;&#xa;SourceSystem	,&#xd;&#xa;LoadDate,	&#xd;&#xa;tiv_allbuildings,	&#xd;&#xa;tiv_location_total	&#xd;&#xa;&#x29;	&#xd;&#xa;VALUES	&#xd;&#xa;&#x28;	&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;1900-01-01&#x27;	,&#xd;&#xa; &#x27;3000-01-01&#x27;	,&#xd;&#xa; &#x27;Unknown&#x27;	,&#xd;&#xa; &#x27;Unknown&#x27;,	&#xd;&#xa;0,	&#xd;&#xa;&#x27;Unknown&#x27;,	&#xd;&#xa;&#x27;Unknown&#x27;,	&#xd;&#xa;&#x27;Unknown&#x27;,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;1900	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;1900	,&#xd;&#xa;&#x27;N&#x27;     ,	&#xd;&#xa;&#x27;N&#x27;     ,	&#xd;&#xa;&#x27;N&#x27;     ,	&#xd;&#xa;&#x27;N&#x27;     ,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;1990-01-01&#x27;	,&#xd;&#xa;0,	&#xd;&#xa;0	&#xd;&#xa;&#x29;&#x3b;	</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>130</xloc>
+      <yloc>24</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_DRIVER</name>
+      <description/>
+      <type>SQL</type>
+      <sql>INSERT INTO dim_driver &#x28;driver_id&#xd;&#xa;       , valid_fromdate&#xd;&#xa;       , valid_todate&#xd;&#xa;       , record_version&#xd;&#xa;       , driver_uniqueid&#xd;&#xa;       , policy_uniqueid&#xd;&#xa;       , policy_id&#xd;&#xa;       , spinndriver_parentid&#xd;&#xa;       , status&#xd;&#xa;       , driverinfocd&#xd;&#xa;       , drivernumber&#xd;&#xa;       , drivertypecd&#xd;&#xa;       , driverstatuscd&#xd;&#xa;       , licensenumber&#xd;&#xa;       , licensedt&#xd;&#xa;       , licensedstateprovcd&#xd;&#xa;       , relationshiptoinsuredcd&#xd;&#xa;       , scholasticdiscountind&#xd;&#xa;       , mvrrequestind&#xd;&#xa;   , mvrstatusdt&#xd;&#xa;       , mvrstatus&#xd;&#xa;       , maturedriverind&#xd;&#xa;       , drivertrainingind&#xd;&#xa;       , gooddriverind&#xd;&#xa;       , accidentpreventioncoursecompletiondt&#xd;&#xa;       , drivertrainingcompletiondt&#xd;&#xa;       , accidentpreventioncourseind&#xd;&#xa;       , scholasticcertificationdt&#xd;&#xa;       , activemilitaryind&#xd;&#xa;       , permanentlicenseind&#xd;&#xa;       , newtostateind&#xd;&#xa;       , persontypecd&#xd;&#xa;       , gendercd&#xd;&#xa;       , birthdt&#xd;&#xa;       , maritalstatuscd&#xd;&#xa;       , occupationclasscd&#xd;&#xa;       , positiontitle&#xd;&#xa;       , currentresidencecd&#xd;&#xa;       , civilservantind&#xd;&#xa;       , retiredind&#xd;&#xa;       , newteenexpirationdt&#xd;&#xa;       , attachedvehicleref&#xd;&#xa;       , viol_pointschargedterm&#xd;&#xa;       , acci_pointschargedterm&#xd;&#xa;       , susp_pointschargedterm&#xd;&#xa;       , other_pointschargedterm&#xd;&#xa;       ,LoadDate&#xd;&#xa;&#x29; VALUES &#x28;0&#xd;&#xa;       , &#x27;1900-01-01&#x27;&#xd;&#xa;       , &#x27;3000-12-12&#x27;&#xd;&#xa;       , 1&#xd;&#xa;       , &#x27;Unknown&#x27;&#xd;&#xa;       , &#x27;Unknown&#x27;&#xd;&#xa;       , 0&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , 0&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;1900-01-01&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;   , &#x27;1900-01-01&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;1900-01-01&#x27;&#xd;&#xa;       , &#x27;1900-01-01&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;1900-01-01&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;1900-01-01&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , &#x27;1900-01-01&#x27;&#xd;&#xa;       , &#x27;&#x7e;&#x27;&#xd;&#xa;       , 0&#xd;&#xa;       , 0&#xd;&#xa;       , 0&#xd;&#xa;       , 0&#xd;&#xa;       , &#x27;1900-01-01&#x27;&#xd;&#xa;       &#x29;&#x3b;&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>298</xloc>
+      <yloc>24</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_VEHICLE</name>
+      <description/>
+      <type>SQL</type>
+      <sql>insert into dbo.DIM_VEHICLE		&#xd;&#xa;&#x28;&#xd;&#xa;vehicle_id 	,&#xd;&#xa;valid_fromdate 	,&#xd;&#xa;valid_todate 	,&#xd;&#xa;record_version 	,&#xd;&#xa;Vehicle_UniqueId 	,&#xd;&#xa;Policy_Uniqueid 	,&#xd;&#xa;Policy_Id  	,&#xd;&#xa;SPInnVehicle_Id 	,&#xd;&#xa; StateProvCd 	,&#xd;&#xa; County 	,&#xd;&#xa; PostalCode 	,&#xd;&#xa; City 	,&#xd;&#xa; Addr1 	,&#xd;&#xa; Addr2 	,&#xd;&#xa; GaragAddrFlg 	,&#xd;&#xa; Status 	,&#xd;&#xa; Manufacturer 	,&#xd;&#xa; Model 	,&#xd;&#xa; ModelYr 	,&#xd;&#xa; VehIdentificationNumber 	,&#xd;&#xa; ValidVinInd 	,&#xd;&#xa; VehLicenseNumber 	,&#xd;&#xa; RegistrationStateProvCd 	,&#xd;&#xa; VehBodyTypeCd 	,&#xd;&#xa; PerformanceCd 	,&#xd;&#xa; RestraintCd 	,&#xd;&#xa; AntiBrakingSystemCd 	,&#xd;&#xa; AntiTheftCd 	,&#xd;&#xa; EngineSize 	,&#xd;&#xa; EngineCylinders 	,&#xd;&#xa; EngineHorsePower 	,&#xd;&#xa; EngineType 	,&#xd;&#xa; VehUseCd 	,&#xd;&#xa; GarageTerritory 	,&#xd;&#xa; CollisionDed 	,&#xd;&#xa; ComprehensiveDed 	,&#xd;&#xa; StatedAmt 	,&#xd;&#xa; ClassCd 	,&#xd;&#xa; RatingValue 	,&#xd;&#xa; CostNewAmt 	,&#xd;&#xa; EstimatedAnnualDistance 	,&#xd;&#xa; EstimatedWorkDistance 	,&#xd;&#xa; LeasedVehInd 	,&#xd;&#xa; PurchaseDt ,&#xd;&#xa; StatedAmtInd 	,&#xd;&#xa; NewOrUsedInd 	,&#xd;&#xa; CarPoolInd 	,&#xd;&#xa; OdometerReading 	,&#xd;&#xa; WeeksPerMonthDriven 	,&#xd;&#xa; DaylightRunningLightsInd 	,&#xd;&#xa; PassiveSeatBeltInd 	,&#xd;&#xa; DaysPerWeekDriven 	,&#xd;&#xa; UMPDLimit 	,&#xd;&#xa; TowingAndLaborInd 	,&#xd;&#xa; RentalReimbursementInd 	,&#xd;&#xa; LiabilityWaiveInd 	,&#xd;&#xa; RateFeesInd 	,&#xd;&#xa; OptionalEquipmentValue 	,&#xd;&#xa; CustomizingEquipmentInd 	,&#xd;&#xa; CustomizingEquipmentDesc 	,&#xd;&#xa; InvalidVinAcknowledgementInd 	,&#xd;&#xa; IgnoreUMPDWCDInd 	,&#xd;&#xa; RecalculateRatingSymbolInd 	,&#xd;&#xa; ProgramTypeCd 	,&#xd;&#xa; CMPRatingValue 	,&#xd;&#xa; COLRatingValue 	,&#xd;&#xa; LiabilityRatingValue 	,&#xd;&#xa; MedPayRatingValue 	,&#xd;&#xa; RACMPRatingValue 	,&#xd;&#xa; RACOLRatingValue 	,&#xd;&#xa; RABIRatingSymbol 	,&#xd;&#xa; RAPDRatingSymbol 	,&#xd;&#xa; RAMedPayRatingSymbol 	,&#xd;&#xa; EstimatedAnnualDistanceOverride 	,&#xd;&#xa; OriginalEstimatedAnnualMiles 	,&#xd;&#xa; ReportedMileageNonSave 	,&#xd;&#xa; Mileage 	,&#xd;&#xa; EstimatedNonCommuteMiles 	,&#xd;&#xa; TitleHistoryIssue 	,&#xd;&#xa; OdometerProblems 	,&#xd;&#xa; Bundle 	,&#xd;&#xa; LoanLeaseGap 	,&#xd;&#xa; EquivalentReplacementCost 	,&#xd;&#xa; OriginalEquipmentManufacturer 	,&#xd;&#xa; OptionalRideshare 	,&#xd;&#xa; MedicalPartsAccessibility 	,&#xd;&#xa; VehNumber 	,&#xd;&#xa; OdometerReadingPrior 	,&#xd;&#xa; ReportedMileageNonSaveDtPrior	,&#xd;&#xa; FullGlassCovInd 	,&#xd;&#xa; LOADDATE 	&#xd;&#xa;&#x29;&#xd;&#xa;values		&#xd;&#xa;&#x28;		&#xd;&#xa;0	,	&#xd;&#xa; &#x27;1900-01-01&#x27;	,	&#xd;&#xa; &#x27;3000-12-12&#x27;	,	&#xd;&#xa;0	,	&#xd;&#xa; &#x27;Unknown&#x27;	,	&#xd;&#xa; &#x27;Unknown&#x27;	,	&#xd;&#xa;0	,	&#xd;&#xa; &#x27;Unknown&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa;0	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa;0	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa;0	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa;0	,	&#xd;&#xa;0	,	&#xd;&#xa;0	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;1900-01-01&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa;0	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa;0	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;1900-01-01&#x27;	,	&#xd;&#xa; &#x27;&#x7e;&#x27;	,	&#xd;&#xa; &#x27;1900-01-01&#x27;		&#xd;&#xa;&#x29;&#x3b;		</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>480</xloc>
+      <yloc>25</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_BUILDING</name>
+      <description/>
+      <type>SQL</type>
+      <sql>INSERT INTO DIM_BUILDING	&#xd;&#xa;&#x28;	&#xd;&#xa;&#x5b;BUILDING_ID&#x5d;,	&#xd;&#xa;&#x5b;VALID_FROMDATE&#x5d;,	&#xd;&#xa;&#x5b;VALID_TODATE&#x5d; ,	&#xd;&#xa;&#x5b;RECORD_VERSION&#x5d;,	&#xd;&#xa;&#x5b;Building_UniqueId&#x5d;,	&#xd;&#xa;&#x5b;Policy_Uniqueid&#x5d;,	&#xd;&#xa;&#x5b;Policy_id&#x5d;,	&#xd;&#xa;&#x5b;spinnbuilding_id&#x5d;,	&#xd;&#xa;&#x5b;Status&#x5d;  ,	&#xd;&#xa;&#x5b;Building_NaturalKey&#x5d;  ,	&#xd;&#xa;&#x5b;StateProvCd&#x5d;,	&#xd;&#xa;&#x5b;County&#x5d;,	&#xd;&#xa;&#x5b;PostalCode&#x5d;,	&#xd;&#xa;&#x5b;City&#x5d;,	&#xd;&#xa;&#x5b;Addr1&#x5d;,	&#xd;&#xa;&#x5b;Addr2&#x5d; ,	&#xd;&#xa;&#x5b;BldgNumber&#x5d;	,&#xd;&#xa;&#x5b;BusinessCategory&#x5d;	,&#xd;&#xa;&#x5b;BusinessClass&#x5d;	,&#xd;&#xa;&#x5b;ConstructionCd&#x5d;	,&#xd;&#xa;&#x5b;RoofCd&#x5d;	,&#xd;&#xa;&#x5b;YearBuilt&#x5d;	,&#xd;&#xa;&#x5b;SqFt&#x5d;	,&#xd;&#xa;&#x5b;Stories&#x5d;	,&#xd;&#xa;&#x5b;Units&#x5d;	,&#xd;&#xa;&#x5b;OccupancyCd&#x5d;	,&#xd;&#xa;&#x5b;ProtectionClass&#x5d;	,&#xd;&#xa;&#x5b;TerritoryCd&#x5d;	,&#xd;&#xa;&#x5b;BuildingLimit&#x5d;	,&#xd;&#xa;&#x5b;ContentsLimit&#x5d;	,&#xd;&#xa;&#x5b;ValuationMethod&#x5d;	,&#xd;&#xa;&#x5b;InflationGuardPct&#x5d;	,&#xd;&#xa;&#x5b;OrdinanceOrLawInd&#x5d;	,&#xd;&#xa;&#x5b;ScheduledPremiumMod&#x5d;	,&#xd;&#xa;&#x5b;WindHailExclusion&#x5d;	,&#xd;&#xa;&#x5b;CovALimit&#x5d;	,&#xd;&#xa;&#x5b;CovBLimit&#x5d;	,&#xd;&#xa;&#x5b;CovCLimit&#x5d;	,&#xd;&#xa;&#x5b;CovDLimit&#x5d;	,&#xd;&#xa;&#x5b;CovELimit&#x5d;	,&#xd;&#xa;&#x5b;CovFLimit&#x5d;	,&#xd;&#xa;&#x5b;AllPerilDed&#x5d;	,&#xd;&#xa;&#x5b;BurglaryAlarmType&#x5d;	,&#xd;&#xa;&#x5b;FireAlarmType&#x5d;	,&#xd;&#xa;&#x5b;CovBLimitIncluded&#x5d;	,&#xd;&#xa;&#x5b;CovBLimitIncrease&#x5d;	,&#xd;&#xa;&#x5b;CovCLimitIncluded&#x5d;	,&#xd;&#xa;&#x5b;CovCLimitIncrease&#x5d;	,&#xd;&#xa;&#x5b;CovDLimitIncluded&#x5d;	,&#xd;&#xa;&#x5b;CovDLimitIncrease&#x5d;	,&#xd;&#xa;&#x5b;OrdinanceOrLawPct&#x5d;	,&#xd;&#xa;&#x5b;NeighborhoodCrimeWatchInd&#x5d;	,&#xd;&#xa;&#x5b;EmployeeCreditInd&#x5d;	,&#xd;&#xa;&#x5b;MultiPolicyInd&#x5d;	,&#xd;&#xa;&#x5b;HomeWarrantyCreditInd&#x5d;	,&#xd;&#xa;&#x5b;YearOccupied&#x5d;	,&#xd;&#xa;&#x5b;YearPurchased&#x5d;	,&#xd;&#xa;&#x5b;TypeOfStructure&#x5d;	,&#xd;&#xa;&#x5b;FeetToFireHydrant&#x5d;	,&#xd;&#xa;&#x5b;NumberOfFamilies&#x5d;	,&#xd;&#xa;&#x5b;MilesFromFireStation&#x5d;	,&#xd;&#xa;&#x5b;Rooms&#x5d;	,&#xd;&#xa;&#x5b;RoofPitch&#x5d;	,&#xd;&#xa;&#x5b;FireDistrict&#x5d;	,&#xd;&#xa;&#x5b;SprinklerSystem&#x5d;	,&#xd;&#xa;&#x5b;FireExtinguisherInd&#x5d;	,&#xd;&#xa;&#x5b;KitchenFireExtinguisherInd&#x5d;	,&#xd;&#xa;&#x5b;DeadboltInd&#x5d;	,&#xd;&#xa;&#x5b;GatedCommunityInd&#x5d;	,&#xd;&#xa;&#x5b;CentralHeatingInd&#x5d;	,&#xd;&#xa;&#x5b;Foundation&#x5d;	,&#xd;&#xa;&#x5b;WiringRenovation&#x5d;	,&#xd;&#xa;&#x5b;WiringRenovationCompleteYear&#x5d;	,&#xd;&#xa;&#x5b;PlumbingRenovation&#x5d;	,&#xd;&#xa;&#x5b;HeatingRenovation&#x5d;	,&#xd;&#xa;&#x5b;PlumbingRenovationCompleteYear&#x5d;	,&#xd;&#xa;&#x5b;ExteriorPaintRenovation&#x5d;	,&#xd;&#xa;&#x5b;HeatingRenovationCompleteYear&#x5d;	,&#xd;&#xa;&#x5b;CircuitBreakersInd&#x5d;	,&#xd;&#xa;&#x5b;CopperWiringInd&#x5d;	,&#xd;&#xa;&#x5b;ExteriorPaintRenovationCompleteYear&#x5d;	,&#xd;&#xa;&#x5b;CopperPipesInd&#x5d;	,&#xd;&#xa;&#x5b;EarthquakeRetrofitInd&#x5d;	,&#xd;&#xa;&#x5b;PrimaryFuelSource&#x5d;	,&#xd;&#xa;&#x5b;SecondaryFuelSource&#x5d;	,&#xd;&#xa;&#x5b;UsageType&#x5d;	,&#xd;&#xa;&#x5b;HomegardCreditInd&#x5d;	,&#xd;&#xa;&#x5b;MultiPolicyNumber&#x5d;	,&#xd;&#xa;&#x5b;LocalFireAlarmInd&#x5d;	,&#xd;&#xa;&#x5b;NumLosses&#x5d;	,&#xd;&#xa;&#x5b;CovALimitIncrease&#x5d;	,&#xd;&#xa;&#x5b;CovALimitIncluded&#x5d;	,&#xd;&#xa;&#x5b;MonthsRentedOut&#x5d;	,&#xd;&#xa;&#x5b;RoofReplacement&#x5d;	,&#xd;&#xa;&#x5b;SafeguardPlusInd&#x5d;	,&#xd;&#xa;&#x5b;CovELimitIncluded&#x5d;	,&#xd;&#xa;&#x5b;RoofReplacementCompleteYear&#x5d;	,&#xd;&#xa;&#x5b;CovELimitIncrease&#x5d;	,&#xd;&#xa;&#x5b;OwnerOccupiedUnits&#x5d;	,&#xd;&#xa;&#x5b;TenantOccupiedUnits&#x5d;	,&#xd;&#xa;&#x5b;ReplacementCostDwellingInd&#x5d;	,&#xd;&#xa;&#x5b;FeetToPropertyLine&#x5d;	,&#xd;&#xa;&#x5b;GalvanizedPipeInd&#x5d;	,&#xd;&#xa;&#x5b;WorkersCompInservant&#x5d;	,&#xd;&#xa;&#x5b;WorkersCompOutservant&#x5d;	,&#xd;&#xa;&#x5b;LiabilityTerritoryCd&#x5d;	,&#xd;&#xa;&#x5b;PremisesLiabilityMedPayInd&#x5d;	,&#xd;&#xa;&#x5b;RelatedPrivateStructureExclusion&#x5d;	,&#xd;&#xa;&#x5b;VandalismExclusion&#x5d;	,&#xd;&#xa;&#x5b;VandalismInd&#x5d;	,&#xd;&#xa;&#x5b;RoofExclusion&#x5d;	,&#xd;&#xa;&#x5b;ExpandedReplacementCostInd&#x5d;	,&#xd;&#xa;&#x5b;ReplacementValueInd&#x5d;	,&#xd;&#xa;&#x5b;OtherPolicyNumber1&#x5d;	,&#xd;&#xa;&#x5b;OtherPolicyNumber2&#x5d;	,&#xd;&#xa;&#x5b;OtherPolicyNumber3&#x5d;	,&#xd;&#xa;&#x5b;PrimaryPolicyNumber&#x5d;	,&#xd;&#xa;&#x5b;OtherPolicyNumbers&#x5d;	,&#xd;&#xa;&#x5b;ReportedFireHazardScore&#x5d;	,&#xd;&#xa;&#x5b;FireHazardScore&#x5d;	,&#xd;&#xa;&#x5b;ReportedSteepSlopeInd&#x5d;	,&#xd;&#xa;&#x5b;SteepSlopeInd&#x5d;	,&#xd;&#xa;&#x5b;ReportedHomeReplacementCost&#x5d;	,&#xd;&#xa;&#x5b;ReportedProtectionClass&#x5d;	,&#xd;&#xa;&#x5b;EarthquakeZone&#x5d;	,&#xd;&#xa;&#x5b;MMIScore&#x5d;	,&#xd;&#xa;&#x5b;HomeInspectionDiscountInd&#x5d;	,&#xd;&#xa;&#x5b;RatingTier&#x5d;	,&#xd;&#xa;&#x5b;SoilTypeCd&#x5d;	,&#xd;&#xa;&#x5b;ReportedFireLineAssessment&#x5d;	,&#xd;&#xa;&#x5b;AAISFireProtectionClass&#x5d;	,&#xd;&#xa;&#x5b;InspectionScore&#x5d;	,&#xd;&#xa;&#x5b;AnnualRents&#x5d;	,&#xd;&#xa;&#x5b;PitchOfRoof&#x5d;	,&#xd;&#xa;&#x5b;TotalLivingSqFt&#x5d;	,&#xd;&#xa;&#x5b;ParkingSqFt&#x5d;	,&#xd;&#xa;&#x5b;ParkingType&#x5d;	,&#xd;&#xa;&#x5b;RetrofitCompleted&#x5d;	,&#xd;&#xa;&#x5b;NumPools&#x5d;	,&#xd;&#xa;&#x5b;FullyFenced&#x5d;	,&#xd;&#xa;&#x5b;DivingBoard&#x5d;	,&#xd;&#xa;&#x5b;Gym&#x5d;	,&#xd;&#xa;&#x5b;FreeWeights&#x5d;	,&#xd;&#xa;&#x5b;WireFencing&#x5d;	,&#xd;&#xa;&#x5b;OtherRecreational&#x5d;	,&#xd;&#xa;&#x5b;OtherRecreationalDesc&#x5d;	,&#xd;&#xa;&#x5b;HealthInspection&#x5d;	,&#xd;&#xa;&#x5b;HealthInspectionDt&#x5d;	,&#xd;&#xa;&#x5b;HealthInspectionCited&#x5d;	,&#xd;&#xa;&#x5b;PriorDefectRepairs&#x5d;	,&#xd;&#xa;&#x5b;MSBReconstructionEstimate&#x5d;	,&#xd;&#xa;&#x5b;BIIndemnityPeriod&#x5d;	,&#xd;&#xa;&#x5b;EquipmentBreakdown&#x5d;	,&#xd;&#xa;&#x5b;MoneySecurityOnPremises&#x5d;	,&#xd;&#xa;&#x5b;MoneySecurityOffPremises&#x5d;	,&#xd;&#xa;&#x5b;WaterBackupSump&#x5d;	,&#xd;&#xa;&#x5b;SprinkleredBuildings&#x5d;	,&#xd;&#xa;&#x5b;SurveillanceCams&#x5d;	,&#xd;&#xa;&#x5b;GatedComplexKeyAccess&#x5d;	,&#xd;&#xa;&#x5b;EQRetrofit&#x5d;	,&#xd;&#xa;&#x5b;UnitsPerBuilding&#x5d;	,&#xd;&#xa;&#x5b;NumStories&#x5d;	,&#xd;&#xa;&#x5b;ConstructionQuality&#x5d;	,&#xd;&#xa;&#x5b;BurglaryRobbery&#x5d;	,&#xd;&#xa;&#x5b;NFPAClassification&#x5d;	,&#xd;&#xa;&#x5b;AreasOfCoverage&#x5d;	,&#xd;&#xa;&#x5b;CODetector&#x5d;	,&#xd;&#xa;&#x5b;SmokeDetector&#x5d;	,&#xd;&#xa;&#x5b;SmokeDetectorInspectInd&#x5d;	,&#xd;&#xa;&#x5b;WaterHeaterSecured&#x5d;	,&#xd;&#xa;&#x5b;BoltedOrSecured&#x5d;	,&#xd;&#xa;&#x5b;SoftStoryCripple&#x5d;	,&#xd;&#xa;&#x5b;SeniorHousingPct&#x5d;	,&#xd;&#xa;&#x5b;DesignatedSeniorHousing&#x5d;	,&#xd;&#xa;&#x5b;StudentHousingPct&#x5d;	,&#xd;&#xa;&#x5b;DesignatedStudentHousing&#x5d;	,&#xd;&#xa;&#x5b;PriorLosses&#x5d;	,&#xd;&#xa;&#x5b;TenantEvictions&#x5d;	,&#xd;&#xa;&#x5b;VacancyRateExceed&#x5d;	,&#xd;&#xa;&#x5b;SeasonalRentals&#x5d;	,&#xd;&#xa;&#x5b;CondoInsuingAgmt&#x5d;	,&#xd;&#xa;&#x5b;GasValve&#x5d;	,&#xd;&#xa;&#x5b;OwnerOccupiedPct&#x5d;	,&#xd;&#xa;&#x5b;RestaurantName&#x5d;	,&#xd;&#xa;&#x5b;HoursOfOperation&#x5d;	,&#xd;&#xa;&#x5b;RestaurantSqFt&#x5d;	,&#xd;&#xa;&#x5b;SeatingCapacity&#x5d;	,&#xd;&#xa;&#x5b;AnnualGrossSales&#x5d;	,&#xd;&#xa;&#x5b;SeasonalOrClosed&#x5d;	,&#xd;&#xa;&#x5b;BarCocktailLounge&#x5d;	,&#xd;&#xa;&#x5b;LiveEntertainment&#x5d;	,&#xd;&#xa;&#x5b;BeerWineGrossSales&#x5d;	,&#xd;&#xa;&#x5b;DistilledSpiritsServed&#x5d;	,&#xd;&#xa;&#x5b;KitchenDeepFryer&#x5d;	,&#xd;&#xa;&#x5b;SolidFuelCooking&#x5d;	,&#xd;&#xa;&#x5b;ANSULSystem&#x5d;	,&#xd;&#xa;&#x5b;ANSULAnnualInspection&#x5d;	,&#xd;&#xa;&#x5b;TenantNamesList&#x5d;	,&#xd;&#xa;&#x5b;TenantBusinessType&#x5d;	,&#xd;&#xa;&#x5b;TenantGLLiability&#x5d;	,&#xd;&#xa;&#x5b;InsuredOccupiedPortion&#x5d;	,&#xd;&#xa;&#x5b;ValetParking&#x5d;	,&#xd;&#xa;&#x5b;LessorSqFt&#x5d;	,&#xd;&#xa;&#x5b;BuildingRiskNumber&#x5d;	,&#xd;&#xa;&#x5b;MultiPolicyIndUmbrella&#x5d;	,&#xd;&#xa;&#x5b;PoolInd&#x5d;	,&#xd;&#xa;&#x5b;StudsUpRenovation&#x5d;	,&#xd;&#xa;&#x5b;StudsUpRenovationCompleteYear&#x5d;	,&#xd;&#xa;&#x5b;MultiPolicyNumberUmbrella&#x5d;	,&#xd;&#xa;&#x5b;RCTMSBAmt&#x5d;	,&#xd;&#xa;&#x5b;RCTMSBHomeStyle&#x5d;	,&#xd;&#xa;&#x5b;WINSOverrideNonSmokerDiscount&#x5d;	,&#xd;&#xa;&#x5b;WINSOverrideSeniorDiscount&#x5d;	,&#xd;&#xa;&#x5b;ITV&#x5d;	,&#xd;&#xa;&#x5b;ITVDate&#x5d;	,&#xd;&#xa;&#x5b;MSBReportType&#x5d;	,&#xd;&#xa;&#x5b;VandalismDesiredInd&#x5d;	,&#xd;&#xa;&#x5b;WoodShakeSiding&#x5d;	,&#xd;&#xa;&#x5b;CSEAgent&#x5d;	,&#xd;&#xa;&#x5b;PropertyManager&#x5d;	,&#xd;&#xa;&#x5b;RentersInsurance&#x5d;	,&#xd;&#xa;&#x5b;WaterDetectionDevice&#x5d;	,&#xd;&#xa;&#x5b;AutoHomeInd&#x5d;	,&#xd;&#xa;&#x5b;EarthquakeUmbrellaInd&#x5d;	,&#xd;&#xa;&#x5b;LandlordInd&#x5d;	,&#xd;&#xa;&#x5b;LossAssessment&#x5d;	,&#xd;&#xa;&#x5b;GasShutOffInd&#x5d;	,&#xd;&#xa;&#x5b;WaterDed&#x5d;	,&#xd;&#xa;&#x5b;ServiceLine&#x5d;	,&#xd;&#xa;&#x5b;FunctionalReplacementCost&#x5d;	,&#xd;&#xa;&#x5b;MilesOfStreet&#x5d;	,&#xd;&#xa;&#x5b;HOAExteriorStructure&#x5d;	,&#xd;&#xa;&#x5b;RetailPortionDevelopment&#x5d;	,&#xd;&#xa;&#x5b;LightIndustrialType&#x5d;	,&#xd;&#xa;&#x5b;LightIndustrialDescription&#x5d;	,&#xd;&#xa;&#x5b;PoolCoverageLimit&#x5d;	,&#xd;&#xa;&#x5b;MultifamilyResidentialBuildings&#x5d;	,&#xd;&#xa;&#x5b;SinglefamilyDwellings&#x5d;	,&#xd;&#xa;&#x5b;AnnualPayroll&#x5d;	,&#xd;&#xa;&#x5b;AnnualRevenue&#x5d;	,&#xd;&#xa;&#x5b;BedsOccupied&#x5d;	,&#xd;&#xa;&#x5b;EmergencyLighting&#x5d;	,&#xd;&#xa;&#x5b;ExitSignsPosted&#x5d;	,&#xd;&#xa;&#x5b;FullTimeStaff&#x5d;	,&#xd;&#xa;&#x5b;LicensedBeds&#x5d;	,&#xd;&#xa;&#x5b;NumberofFireExtinguishers&#x5d;	,&#xd;&#xa;&#x5b;OtherFireExtinguishers&#x5d;	,&#xd;&#xa;&#x5b;OxygenTanks&#x5d;	,&#xd;&#xa;&#x5b;PartTimeStaff&#x5d;	,&#xd;&#xa;&#x5b;SmokingPermitted&#x5d;	,&#xd;&#xa;&#x5b;StaffOnDuty&#x5d;	,&#xd;&#xa;&#x5b;TypeofFireExtinguishers&#x5d;	,&#xd;&#xa;&#x5b;SourceSystem&#x5d;,	&#xd;&#xa;&#x5b;LOADDATE&#x5d;	&#xd;&#xa;&#x29;	&#xd;&#xa;VALUES	&#xd;&#xa;&#x28;	&#xd;&#xa;0	,&#xd;&#xa; &#x27;1990-01-01&#x27;	,&#xd;&#xa; &#x27;3000-01-01&#x27;	,&#xd;&#xa;1	,&#xd;&#xa;&#x27;Unknown&#x27;	,&#xd;&#xa;&#x27;Unknown&#x27;	,&#xd;&#xa;0 ,	&#xd;&#xa;&#x27;Unknown&#x27;	,&#xd;&#xa;&#x27;Unknown&#x27;	,&#xd;&#xa;&#x27;Unknown&#x27;	,&#xd;&#xa;&#x27;&#x7e;&#x27;,	&#xd;&#xa;&#x27;&#x7e;&#x27;,	&#xd;&#xa;&#x27;&#x7e;&#x27;,	&#xd;&#xa;&#x27;&#x7e;&#x27;,	&#xd;&#xa;&#x27;&#x7e;&#x27;,	&#xd;&#xa;&#x27;&#x7e;&#x27;,	&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;1900-01-01&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;1900-01-01&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;,	&#xd;&#xa;&#x27;1990-01-01&#x27;	&#xd;&#xa;&#x29;&#x3b;	&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>660</xloc>
+      <yloc>42</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_BUILDINGRISK</name>
+      <description/>
+      <type>SQL</type>
+      <sql>INSERT INTO DIM_BUILDINGRISK	&#xd;&#xa;&#x28;	&#xd;&#xa;BuildingRisk_ID,	&#xd;&#xa;VALID_FROMDATE,	&#xd;&#xa;VALID_TODATE,	&#xd;&#xa;RECORD_VERSION,	&#xd;&#xa;BuildingRisk_UniqueId,&#xd;&#xa;policy_uniqueid,&#xd;&#xa;policy_id,	&#xd;&#xa;SPINNBuildingRisk_Id,	&#xd;&#xa;Status,	&#xd;&#xa;BldgNumber,	&#xd;&#xa;ConstructionCd,	&#xd;&#xa;RoofCd,	&#xd;&#xa;YearBuilt,	&#xd;&#xa;BuildingLimit,	&#xd;&#xa;ContentsLimit,	&#xd;&#xa;InflationGuardPct,	&#xd;&#xa;OrdinanceOrLawInd,	&#xd;&#xa;PitchOfRoof,	&#xd;&#xa;TotalLivingSqFt,	&#xd;&#xa;MSBReconstructionEstimate,	&#xd;&#xa;SprinkleredBuildings,	&#xd;&#xa;UnitsPerBuilding,	&#xd;&#xa;NumStories,	&#xd;&#xa;ConstructionQuality,	&#xd;&#xa;AreasOfCoverage,	&#xd;&#xa;RPC125Pct,	&#xd;&#xa;IncreasedConstCost,	&#xd;&#xa;TIV	,&#xd;&#xa;TIV_SPINN	,&#xd;&#xa;TimeElement,	&#xd;&#xa;SubjectAmount,	&#xd;&#xa;FacultativeCededPremium,	&#xd;&#xa;CededPremiumFactor,	&#xd;&#xa;BuildingRiskNumber,	&#xd;&#xa;BuildingType,	&#xd;&#xa;SaunaRoom,	&#xd;&#xa;FitnessCenter,	&#xd;&#xa;AnnualRevenue,	&#xd;&#xa;LicensedBeds,	&#xd;&#xa;RiskGroupNumber	,&#xd;&#xa;RiskGroupType,	&#xd;&#xa;RiskGroupDescrtiption,	&#xd;&#xa;SourceSystem,	&#xd;&#xa;LoadDate	,&#xd;&#xa;audit_id,&#xd;&#xa;ORIGINAL_VALID_FROMDATE,	&#xd;&#xa;ORIGINAL_VALID_TODATE,	&#xd;&#xa;ORIGINAL_RECORD_VERSION	&#xd;&#xa;&#x29;	&#xd;&#xa;VALUES	&#xd;&#xa;&#x28;	&#xd;&#xa;0	&#xd;&#xa;,&#x27;1900-01-01&#x27;	&#xd;&#xa;,&#x27;3000-01-01&#x27;	&#xd;&#xa;,1	&#xd;&#xa;,&#x27;Unknown&#x27;	&#xd;&#xa;,&#x27;Unknown&#x27;	&#xd;&#xa;,0&#xd;&#xa;,&#x27;Unknown&#x27;	&#xd;&#xa;,&#x27;Unknown&#x27;	&#xd;&#xa;,0	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,0	&#xd;&#xa;,0	&#xd;&#xa;,0	&#xd;&#xa;,0	&#xd;&#xa;,0	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,0	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,0	&#xd;&#xa;,0	&#xd;&#xa;,0	&#xd;&#xa;,0	&#xd;&#xa;,0	&#xd;&#xa;,0	&#xd;&#xa;,0	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,0	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,0	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,0	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,&#x27;&#x7e;&#x27;	&#xd;&#xa;,&#x27;1990-01-01&#x27;	&#xd;&#xa;,0&#xd;&#xa;,&#x27;1900-01-01&#x27;	&#xd;&#xa;,&#x27;1900-01-01&#x27;	&#xd;&#xa;,0	&#xd;&#xa;&#x29;&#x3b;	</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>697</xloc>
+      <yloc>180</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_COVEREDRISK</name>
+      <description/>
+      <type>SQL</type>
+      <sql>insert into dim_coveredrisk	&#xd;&#xa;&#x28;	&#xd;&#xa;    coveredrisk_id,	&#xd;&#xa;	cvrsk_uniqueid,&#xd;&#xa;	policy_uniqueid,&#xd;&#xa;	policy_id,&#xd;&#xa;	deleted_indicator,&#xd;&#xa;	cvrsk_typedescription,&#xd;&#xa;	cvrsk_item_id,&#xd;&#xa;	cvrsk_item_uniqueid,&#xd;&#xa;	cvrsk_item_type,&#xd;&#xa;	cvrsk_item_id2,&#xd;&#xa;	cvrsk_item_uniqueid2,&#xd;&#xa;	cvrsk_item_type2,&#xd;&#xa;	cvrsk_startdate ,&#xd;&#xa;	cvrsk_number,&#xd;&#xa;	cvrsk_number2,&#xd;&#xa;	cvrsk_item_naturalkey,&#xd;&#xa;	cvrsk_item_naturalkey2,&#xd;&#xa;	cvrsk_inceptiondate,&#xd;&#xa;	cvrsk_inceptiondate2,&#xd;&#xa;	policy_last_known_cvrsk_item_id,&#xd;&#xa;	policy_last_known_cvrsk_item_id2 ,&#xd;&#xa;	policy_term_last_known_cvrsk_item_id,&#xd;&#xa;	policy_term_last_known_cvrsk_item_id2,&#xd;&#xa;	spinn_systemid,&#xd;&#xa;	PolAppInconsistency_Flg,&#xd;&#xa;	RiskIdDuplicates_Flg, &#xd;&#xa;	RiskNumberDuplicates_Flg,&#xd;&#xa;	RiskNaturalKeyDuplicates_Flg,&#xd;&#xa;	RiskNaturalKey2Duplicates_Flg,&#xd;&#xa;	ExcludedDrv_Flg,&#xd;&#xa;	source_system,&#xd;&#xa;	LoadDate&#xd;&#xa;&#x29;	&#xd;&#xa;values	&#xd;&#xa;&#x28;	&#xd;&#xa;	0,&#xd;&#xa;	&#x27;Unknown&#x27;,&#xd;&#xa;	&#x27;Unknown&#x27;,&#xd;&#xa;	0,&#xd;&#xa;	1,&#xd;&#xa;	&#x27;&#x7e;&#x27;,&#xd;&#xa;	0,&#xd;&#xa;	&#x27;Unknown&#x27;,&#xd;&#xa;	&#x27;&#x7e;&#x27;,&#xd;&#xa;	0,&#xd;&#xa;	&#x27;Unknown&#x27;,&#xd;&#xa;	&#x27;&#x7e;&#x27;,&#xd;&#xa;	&#x27;01-01-1900&#x27;,&#xd;&#xa;	0,&#xd;&#xa;	0,&#xd;&#xa;	&#x27;Unknown&#x27;,&#xd;&#xa;	&#x27;Unknown&#x27;,&#xd;&#xa;	&#x27;01-01-1900&#x27;,&#xd;&#xa;	&#x27;01-01-1900&#x27;,&#xd;&#xa;	0,&#xd;&#xa;	0 ,&#xd;&#xa;	0,&#xd;&#xa;	0,&#xd;&#xa;	0,&#xd;&#xa;	0,&#xd;&#xa;	0,&#xd;&#xa;	0,&#xd;&#xa;	0,&#xd;&#xa;	0,&#xd;&#xa;	0,&#xd;&#xa;	&#x27;SPINN&#x27;,&#xd;&#xa;	&#x27;01-01-1900&#x27;&#xd;&#xa;&#x29;&#x3b;	</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>701</xloc>
+      <yloc>272</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_GROUP_BRIDGE</name>
+      <description/>
+      <type>SQL</type>
+      <sql>insert into DIM_GROUP_BRIDGE	&#xd;&#xa;&#x28;	&#xd;&#xa;	&#x5b;group_bridge_id&#x5d;,&#xd;&#xa;	&#x5b;coveredriskextension_id&#x5d;,&#xd;&#xa;	&#x5b;POLICY_UNIQUEID&#x5d; ,&#xd;&#xa;	&#x5b;POLICY_ID&#x5d;,&#xd;&#xa;	&#x5b;CVRSK_STARTDATE&#x5d;,&#xd;&#xa;	&#x5b;cvrsk_item_uniqueid&#x5d;,&#xd;&#xa;	&#x5b;cvrsk_item_id&#x5d;,&#xd;&#xa;	&#x5b;cvrsk_item_role&#x5d;,&#xd;&#xa;	&#x5b;Status&#x5d;,&#xd;&#xa;	&#x5b;SourceSystem&#x5d;,&#xd;&#xa;	&#x5b;SPINN_SYSTEMID&#x5d;,&#xd;&#xa;	&#x5b;LoadDate&#x5d; &#xd;&#xa;&#x29;	&#xd;&#xa;values	&#xd;&#xa;&#x28;	&#xd;&#xa;0,	&#xd;&#xa;0,	&#xd;&#xa;&#x27;Unknown&#x27;,	&#xd;&#xa;0,	&#xd;&#xa;&#x27;1900-01-01&#x27;,	&#xd;&#xa;&#x27;Unknown&#x27;,	&#xd;&#xa;0,	&#xd;&#xa;&#x27;Unknown&#x27;,	&#xd;&#xa;&#x27;Deleted&#x27;,	&#xd;&#xa;&#x27;SPINN&#x27;,	&#xd;&#xa;0,	&#xd;&#xa;&#x27;1900-01-01&#x27;	&#xd;&#xa;&#x29;&#x3b;	&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>667</xloc>
+      <yloc>405</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_COVEREDRISKEXTENSION</name>
+      <description/>
+      <type>SQL</type>
+      <sql>insert into DIM_COVEREDRISKEXTENSION	&#xd;&#xa;&#x28;	&#xd;&#xa;&#x5b;COVEREDRISKEXTENSION_ID&#x5d;,				&#xd;&#xa;&#x5b;CVRSK_UNIQUEID&#x5d;,				&#xd;&#xa;&#x5b;POLICY_UNIQUEID&#x5d; ,				&#xd;&#xa;&#x5b;POLICY_ID&#x5d;,				&#xd;&#xa;&#x5b;DELETED_INDICATOR&#x5d; ,				&#xd;&#xa;&#x5b;CVRSK_STARTDATE&#x5d; ,				&#xd;&#xa;&#x5b;CVRSK_GROUP_UNIQUEID&#x5d;,				&#xd;&#xa;&#x5b;CVRSK_GROUP_ID&#x5d;,				&#xd;&#xa;&#x5b;CVRSK_GROUP_NAME&#x5d; ,				&#xd;&#xa;&#x5b;CVRSK_GROUP_DESCRIPTION&#x5d; ,				&#xd;&#xa;&#x5b;SPINN_SYSTEMID&#x5d;,			&#xd;&#xa;&#x5b;SOURCE_SYSTEM&#x5d; ,				&#xd;&#xa;&#x5b;LOADDATE&#x5d; &#xd;&#xa;&#x29;	&#xd;&#xa;values	&#xd;&#xa;&#x28;	&#xd;&#xa;0,	&#xd;&#xa;&#x27;Unknown&#x27;,	&#xd;&#xa;&#x27;Unknown&#x27;,	&#xd;&#xa;0,	&#xd;&#xa;0,	&#xd;&#xa;&#x27;1900-01-01&#x27;,	&#xd;&#xa;&#x27;Unknown&#x27;,	&#xd;&#xa;0,	&#xd;&#xa;&#x27;Unknown&#x27;,	&#xd;&#xa;&#x27;Unknown&#x27;,	&#xd;&#xa;0,	&#xd;&#xa;&#x27;SPINN&#x27;,	&#xd;&#xa;&#x27;1900-01-01&#x27;	&#xd;&#xa;&#x29;&#x3b;	&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>652</xloc>
+      <yloc>558</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_CLAIMEXTENSION</name>
+      <description/>
+      <type>SQL</type>
+      <sql>INSERT INTO DIM_CLAIMEXTENSION&#xd;&#xa;           &#x28;CLAIMEXTENSION_ID&#xd;&#xa;           ,VALID_FROMDATE&#xd;&#xa;           ,VALID_TODATE&#xd;&#xa;           ,RECORD_VERSION&#xd;&#xa;           ,CLAIM_UNIQUEID&#xd;&#xa;           ,SOURCE_SYSTEM&#xd;&#xa;           ,LOADDATE&#xd;&#xa;           ,RiskCd&#xd;&#xa;           ,CoverageCd&#xd;&#xa;           ,CarrierCd&#xd;&#xa;           ,CarrierGroupCd&#xd;&#xa;           ,ClaimantCd&#xd;&#xa;           ,FeatureCd&#xd;&#xa;           ,FeatureSubCd&#xd;&#xa;           ,FeatureTypeCd&#xd;&#xa;           ,ReserveCd&#xd;&#xa;           ,ReserveTypeCd&#xd;&#xa;           ,AnnualStatementLineCd&#xd;&#xa;           ,SublineCd&#xd;&#xa;           ,CompanyCd&#xd;&#xa;           ,LineCD&#xd;&#xa;           ,AtFaultCd&#xd;&#xa;           ,SourceCd&#xd;&#xa;           ,CategoryCd&#xd;&#xa;           ,LossCauseCd&#xd;&#xa;           ,ReportedTo&#xd;&#xa;           ,ReportedBy&#xd;&#xa;           ,DamageDesc&#xd;&#xa;           ,ShortDesc&#xd;&#xa;           ,Description&#xd;&#xa;           ,Comment&#xd;&#xa;           ,CLM_CATCODE&#xd;&#xa;           ,CLM_CATDESCRIPTION&#xd;&#xa;           ,SuitFiledInd&#xd;&#xa;		   ,TotalLossInd&#x29;&#xd;&#xa;     VALUES&#xd;&#xa;           &#x28;0&#xd;&#xa;           ,&#x27;01-01-1900&#x27;&#xd;&#xa;           ,&#x27;12-31-3000&#x27;&#xd;&#xa;           ,0&#xd;&#xa;           ,&#x27;Unknown&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;01-01-1900&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;		   ,&#x27;&#x7e;&#x27;&#xd;&#xa;		   &#x29;&#x3b;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>458</xloc>
+      <yloc>601</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_POLICYEXTENSION</name>
+      <description/>
+      <type>SQL</type>
+      <sql>INSERT INTO DIM_POLICYEXTENSION				&#xd;&#xa;           &#x28;POLICYEXTENSION_ID				&#xd;&#xa;           ,VALID_FROMDATE				&#xd;&#xa;           ,VALID_TODATE				&#xd;&#xa;           ,RECORD_VERSION				&#xd;&#xa;           ,POLICY_UNIQUEID				&#xd;&#xa;           ,SOURCE_SYSTEM				&#xd;&#xa;           ,LOADDATE				&#xd;&#xa;           ,TermDays				&#xd;&#xa;           ,CarrierGroupCd				&#xd;&#xa;           ,StateCd				&#xd;&#xa;           ,BusinessSourceCd				&#xd;&#xa;           ,PreviousCarrierCd				&#xd;&#xa;           ,PolicyFormCode				&#xd;&#xa;           ,SubTypeCd				&#xd;&#xa;           ,PayPlanCd				&#xd;&#xa;           ,InceptionDt				&#xd;&#xa;           ,WINSPolicyNumber				&#xd;&#xa;           ,PRIORPOLICYNUMBER				&#xd;&#xa;           ,PREVIOUSPOLICYNUMBER				&#xd;&#xa;           ,AffinityGroupCd				&#xd;&#xa;           ,ProgramInd				&#xd;&#xa;           ,RelatedPolicyNumber				&#xd;&#xa;           ,QuoteNumber				&#xd;&#xa;           ,RenewalTermCd				&#xd;&#xa;           ,RewritePolicyRef				&#xd;&#xa;           ,RewriteFromPolicyRef				&#xd;&#xa;           ,CancelDt				&#xd;&#xa;           ,ReinstateDt				&#xd;&#xa;           ,PersistencyDiscountDt				&#xd;&#xa;           ,PaperLessDelivery				&#xd;&#xa;           ,MultiCarDiscountInd				&#xd;&#xa;           ,LateFee				&#xd;&#xa;           ,NSFFee				&#xd;&#xa;           ,InstallmentFee				&#xd;&#xa;           ,batchquotesourcecd				&#xd;&#xa;		   ,WaivePolicyFeeInd		&#xd;&#xa;		   ,LiabilityLimitCPL		&#xd;&#xa;		   ,LiabilityReductionInd		&#xd;&#xa;		   ,LiabilityLimitOLT		&#xd;&#xa;		   ,PersonalLiabilityLimit		&#xd;&#xa;		   ,GLOccurrenceLimit		&#xd;&#xa;		   ,GLAggregateLimit	&#xd;&#xa;		   ,CustomerRef&#xd;&#xa;		   ,AccountRef	&#xd;&#xa;		   ,Policy_Id&#xd;&#xa;           ,Policy_SPINN_Status&#xd;&#xa;&#x29;				&#xd;&#xa;     VALUES				&#xd;&#xa;           &#x28;0			&#xd;&#xa;           ,&#x27;01-01-1900&#x27;				&#xd;&#xa;           ,&#x27;12-31-3000&#x27;				&#xd;&#xa;           ,0				&#xd;&#xa;           ,&#x27;Unknown&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;01-01-1900&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;01-01-1900&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;01-01-1900&#x27;				&#xd;&#xa;           ,&#x27;01-01-1900&#x27;				&#xd;&#xa;           ,&#x27;01-01-1900&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;				&#xd;&#xa;           ,&#x27;&#x7e;&#x27;			&#xd;&#xa;		   ,&#x27;&#x7e;&#x27;&#xd;&#xa;		   ,&#x27;&#x7e;&#x27;   &#xd;&#xa;		   ,0	&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;&#x29;&#x3b;				</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>95</xloc>
+      <yloc>639</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_POLICYTRANSACTIONEXTENSION</name>
+      <description/>
+      <type>SQL</type>
+      <sql>INSERT INTO DIM_POLICYTRANSACTIONEXTENSION&#xd;&#xa;           &#x28;POLICYTRANSACTIONEXTENSION_ID&#xd;&#xa;           ,POLICYTRANSACTION_UNIQUEID&#xd;&#xa;           ,SOURCE_SYSTEM&#xd;&#xa;           ,LOADDATE&#xd;&#xa;           ,TransactionNumber&#xd;&#xa;           ,Policy_UniqueID&#xd;&#xa;           ,TransactionCd&#xd;&#xa;           ,TransactionLongDescription&#xd;&#xa;           ,TransactionShortDescription&#xd;&#xa;           ,CancelTypeCd&#xd;&#xa;           ,CancelRequestedByCd&#xd;&#xa;           ,CancelReason&#xd;&#xa;           ,PolicyProgramCode&#xd;&#xa;           ,POLICY_ID&#x29;&#xd;&#xa;     VALUES&#xd;&#xa;           &#x28;0&#xd;&#xa;           ,&#x27;Unknown&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;01-01-1900&#x27;&#xd;&#xa;           ,0&#xd;&#xa;           ,&#x27;Unknown&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,&#x27;&#x7e;&#x27;&#xd;&#xa;           ,0&#xd;&#xa;		   &#x29;&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>352</xloc>
+      <yloc>661</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_AUDIT</name>
+      <description/>
+      <type>SQL</type>
+      <sql>insert into dim_audit&#xd;&#xa;&#x28;audit_id, load_type&#x29;&#xd;&#xa;values&#xd;&#xa;&#x28;0, &#x27;Standard Run&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;insert into dim_audit&#xd;&#xa;&#x28;audit_id, load_type&#x29;&#xd;&#xa;values&#xd;&#xa;&#x28;1, &#x27;Historical Run&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;insert into dim_audit&#xd;&#xa;&#x28;audit_id, load_type&#x29;&#xd;&#xa;values&#xd;&#xa;&#x28;2, &#x27;Catch up load&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;insert into dim_audit&#xd;&#xa;&#x28;audit_id, load_type, modification&#x29;&#xd;&#xa;values&#xd;&#xa;&#x28;3, &#x27;Manual Fix&#x27;,&#x27;Issue 7, wrong reporting dates&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;insert into dim_audit&#xd;&#xa;&#x28;audit_id, load_type, modification&#x29;&#xd;&#xa;values&#xd;&#xa;&#x28;4, &#x27;Manual Fix&#x27;,&#x27;Wrong product&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;						&#xd;&#xa;			&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;	13	,&#x27;N&#x2f;A&#x27;,&#x27;VIN number is different in PolicyStats and Active Risk&#x27;, &#x27;FACT_POLICYAUTO_REL and FACT_POLICYBUILDING_REL Quality&#x27;&#x29;&#x3b;				&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;	12	,&#x27;N&#x2f;A&#x27;,&#x27;Driver is different in PolicyStats and Active Risk&#x27;, &#x27;FACT_POLICYAUTO_REL and FACT_POLICYBUILDING_REL Quality&#x27;&#x29;&#x3b;				&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;	10	,&#x27;N&#x2f;A&#x27;,&#x27;Match by RiskCd, VIN number and Driver and Deleted Risk&#x27;, &#x27;FACT_POLICYAUTO_REL and FACT_POLICYBUILDING_REL Quality&#x27;&#x29;&#x3b;				&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;	22	,&#x27;N&#x2f;A&#x27;,&#x27;Driver is different in PolicyStats and Deleted Risk&#x27;, &#x27;FACT_POLICYAUTO_REL and FACT_POLICYBUILDING_REL Quality&#x27;&#x29;&#x3b;				&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;	14	,&#x27;N&#x2f;A&#x27;,&#x27;VIN and Driver are different in PolicyStats, Active Risk&#x27;, &#x27;FACT_POLICYAUTO_REL and FACT_POLICYBUILDING_REL Quality&#x27;&#x29;&#x3b;				&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;	15	,&#x27;N&#x2f;A&#x27;,&#x27;No risk found&#x27;, &#x27;FACT_POLICYAUTO_REL and FACT_POLICYBUILDING_REL Quality&#x27;&#x29;&#x3b;				&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;	16	,&#x27;N&#x2f;A&#x27;,&#x27;Join by VIN Number&#x27;, &#x27;FACT_POLICYAUTO_REL and FACT_POLICYBUILDING_REL Quality&#x27;&#x29;&#x3b;				&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;	23	,&#x27;N&#x2f;A&#x27;,&#x27;VIN number is different in PolicyStats and Deleted Risk&#x27;, &#x27;FACT_POLICYAUTO_REL and FACT_POLICYBUILDING_REL Quality&#x27;&#x29;&#x3b;				&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;	24	,&#x27;N&#x2f;A&#x27;,&#x27;VIN and Driver are different in PolicyStats, Deleted Risk&#x27;, &#x27;FACT_POLICYAUTO_REL and FACT_POLICYBUILDING_REL Quality&#x27;&#x29;&#x3b;				&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;25,&#x27;N&#x2f;A&#x27;,&#x27;join by Risk.Id and LossDate in Policy Term Effective-Expiration&#x27;,&#x27;DIM_CLAIMRISK joining to DIM_COVEREDRISK&#x27;&#x29;&#x3b;						&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;26,&#x27;N&#x2f;A&#x27;,&#x27;join by Vehicle or Building.Id and LossDate in Policy Term Effective-Expiration&#x27;,&#x27;DIM_CLAIMRISK joining to DIM_COVEREDRISK&#x27;&#x29;&#x3b;						&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;27,&#x27;N&#x2f;A&#x27;,&#x27;join by VIN Number and LossDate in Policy Term Effective-Expiration&#x27;,&#x27;DIM_CLAIMRISK joining to DIM_COVEREDRISK&#x27;&#x29;&#x3b;						&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;28,&#x27;N&#x2f;A&#x27;,&#x27;join by Risk Number and LossDate in Policy Term Effective-Expiration&#x27;,&#x27;DIM_CLAIMRISK joining to DIM_COVEREDRISK&#x27;&#x29;&#x3b;						&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;29,&#x27;N&#x2f;A&#x27;,&#x27;join by Risk ID and first record in Policy Term. Loss Date is out of Policy Term Effective-Expiration range&#x27;,&#x27;DIM_CLAIMRISK joining to DIM_COVEREDRISK&#x27;&#x29;&#x3b;						&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;30,&#x27;N&#x2f;A&#x27;,&#x27;for claims with Unknown Vehicles join by Driver ID and LossDate in Policy Term Effective-Expiration&#x27;,&#x27;DIM_CLAIMRISK joining to DIM_COVEREDRISK&#x27;&#x29;&#x3b;						&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;31,&#x27;N&#x2f;A&#x27;,&#x27;for claims with Unknown Vehicles and Unknown or not assigned to any vehicle drivers and LossDate in Policy Term Effective-Expiration&#x27;,&#x27;DIM_CLAIMRISK joining to DIM_COVEREDRISK&#x27;&#x29;&#x3b;						&#xd;&#xa;INSERT INTO DIM_AUDIT &#x28;AUDIT_ID,LOAD_TYPE,QUALITY,COMMENT&#x29; VALUES &#x28;32,&#x27;N&#x2f;A&#x27;,&#x27;for claims with Unknown Vehicles and Unknown or not assigned to any vehicle drivers and LossDate NOT in Policy Term Effective-Expiration&#x27;,&#x27;DIM_CLAIMRISK joining to DIM_COVEREDRISK&#x27;&#x29;&#x3b;						&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>225</xloc>
+      <yloc>748</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_CARFAX</name>
+      <description/>
+      <type>SQL</type>
+      <sql>insert into DIM_CARFAX	&#xd;&#xa;&#x28;	&#xd;&#xa;carfax_id	,&#xd;&#xa;RecentAverageMileage	,&#xd;&#xa;AverageMileage	,&#xd;&#xa;ModeledAnnualMileage	,&#xd;&#xa;FirstOdometerMileage	,&#xd;&#xa;FirstOdometerDt	,&#xd;&#xa;LastOdometerMileage	,&#xd;&#xa;LastOdometerDt	,&#xd;&#xa;LastOwnerLastOdometerMileage	,&#xd;&#xa;CaliforniaRecentMileage	,&#xd;&#xa;RebuiltReconstructed_FirstDt	,&#xd;&#xa;RebuiltReconstructed_LastDt	,&#xd;&#xa;RebuiltReconstructed_FirstState	,&#xd;&#xa;RebuiltReconstructed_LastState	,&#xd;&#xa;Salvage_FirstDt	,&#xd;&#xa;Salvage_LastDt	,&#xd;&#xa;Salvage_FirstState	,&#xd;&#xa;Salvage_LastState	,&#xd;&#xa;Junk_FirstDt	,&#xd;&#xa;Junk_LastDt	,&#xd;&#xa;Junk_FirstState	,&#xd;&#xa;Junk_LastState	,&#xd;&#xa;NotActualMileage_FirstDt	,&#xd;&#xa;NotActualMileage_LastDt	,&#xd;&#xa;NotActualMileage_FirstState	,&#xd;&#xa;NotActualMileage_LastState	,&#xd;&#xa;ManufacturerBuybackLemon_FirstDt	,&#xd;&#xa;ManufacturerBuybackLemon_LastDt	,&#xd;&#xa;ManufacturerBuybackLemon_FirstState	,&#xd;&#xa;ManufacturerBuybackLemon_LastState	,&#xd;&#xa;ExceedsMechanicalLimits_FirstDt	,&#xd;&#xa;ExceedsMechanicalLimits_LastDt	,&#xd;&#xa;ExceedsMechanicalLimits_FirstState	,&#xd;&#xa;ExceedsMechanicalLimits_LastState	,&#xd;&#xa;OtherTitleBrand	,&#xd;&#xa;OtherTitleBrand_FirstDt	,&#xd;&#xa;OtherTitleBrand_LastDt	,&#xd;&#xa;OtherTitleBrand_FirstState	,&#xd;&#xa;OtherTitleBrand_LastState	,&#xd;&#xa;ProblemDescription	,&#xd;&#xa;SystemId	,&#xd;&#xa;VIN	,&#xd;&#xa;Policy_Uniqueid	,&#xd;&#xa;Policy_Id	,&#xd;&#xa;Carfax_Uniqueid	,&#xd;&#xa;valid_fromdate	,&#xd;&#xa;valid_todate	,&#xd;&#xa;record_version	,&#xd;&#xa;LoadDate	&#xd;&#xa;&#x29;	&#xd;&#xa;values	&#xd;&#xa;&#x28;	&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa;0	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa; &#x27;&#x7e;&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;Unknown&#x27;	,&#xd;&#xa; &#x27;Unknown&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;Unknown&#x27;	,&#xd;&#xa; &#x27;01-01-1900&#x27;	,&#xd;&#xa; &#x27;12-31-3000&#x27;	,&#xd;&#xa;0	,&#xd;&#xa; &#x27;01-01-1900&#x27;	&#xd;&#xa;&#x29;&#x3b;	&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>66</xloc>
+      <yloc>497</yloc>
+      </entry>
+    <entry>
+      <name>SQL Default DIM_CLAIMRISK</name>
+      <description/>
+      <type>SQL</type>
+      <sql>INSERT INTO &#x5b;DIM_CLAIMRISK&#x5d;							&#xd;&#xa;           &#x28;&#x5b;CLAIMRISK_ID&#x5d;							&#xd;&#xa;           ,&#x5b;record_version&#x5d;							&#xd;&#xa;           ,&#x5b;valid_fromdate&#x5d;							&#xd;&#xa;           ,&#x5b;valid_todate&#x5d;							&#xd;&#xa;           ,&#x5b;ClaimRef&#x5d;							&#xd;&#xa;           ,&#x5b;ClaimNumber&#x5d;							&#xd;&#xa;           ,&#x5b;clrsk_uniqueid&#x5d;							&#xd;&#xa;           ,&#x5b;cvrsk_uniqueid&#x5d;							&#xd;&#xa;           ,&#x5b;policy_uniqueid&#x5d;							&#xd;&#xa;           ,&#x5b;policy_id&#x5d;							&#xd;&#xa;           ,&#x5b;clrsk_item_id&#x5d;							&#xd;&#xa;           ,&#x5b;clrsk_item_uniqueid&#x5d;							&#xd;&#xa;           ,&#x5b;clrsk_item_type&#x5d;							&#xd;&#xa;           ,&#x5b;clrsk_item_id2&#x5d;							&#xd;&#xa;           ,&#x5b;clrsk_item_uniqueid2&#x5d;							&#xd;&#xa;           ,&#x5b;clrsk_item_type2&#x5d;							&#xd;&#xa;           ,&#x5b;clrsk_lossdate&#x5d;							&#xd;&#xa;           ,&#x5b;clrsk_number&#x5d;							&#xd;&#xa;           ,&#x5b;clrsk_number2&#x5d;							&#xd;&#xa;           ,&#x5b;clvrsk_item_naturalkey&#x5d;							&#xd;&#xa;           ,&#x5b;clrsk_item_naturalkey2&#x5d;							&#xd;&#xa;           ,&#x5b;PrimaryRisk_NaturalKey&#x5d;							&#xd;&#xa;           ,&#x5b;PrimaryRisk_Number&#x5d; 							&#xd;&#xa;           ,&#x5b;LoadDate&#x5d;							&#xd;&#xa;           ,&#x5b;COVEREDRISK_ID&#x5d;							&#xd;&#xa;           ,&#x5b;AUDIT_ID&#x5d;&#x29;							&#xd;&#xa;     VALUES							&#xd;&#xa;           &#x28;0							&#xd;&#xa;           ,0							&#xd;&#xa;           ,&#x27;01-01-1900&#x27;							&#xd;&#xa;           ,&#x27;12-31-3000&#x27;							&#xd;&#xa;           ,0							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,0							&#xd;&#xa;           ,0							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,0							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,&#x27;01-01-1900&#x27;							&#xd;&#xa;           ,0							&#xd;&#xa;           ,0							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,&#x27;Unknown&#x27;							&#xd;&#xa;           ,&#x27;1900-01-01&#x27;							&#xd;&#xa;           ,0							&#xd;&#xa;           ,0&#x29;&#x3b;							&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>4SBI_DataWarehouse</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>55</xloc>
+      <yloc>298</yloc>
+      </entry>
+  </entries>
+  <hops>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_LOCATION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_DRIVER</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_VEHICLE</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_BUILDING</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_BUILDINGRISK</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_COVEREDRISK</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_GROUP_BRIDGE</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_COVEREDRISKEXTENSION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_CLAIMEXTENSION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_POLICYEXTENSION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_POLICYTRANSACTIONEXTENSION</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_AUDIT</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_CARFAX</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>SQL Default DIM_CLAIMRISK</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+  </hops>
+  <notepads>
+  </notepads>
+
+</job>
