@@ -1,0 +1,344 @@
+<transformation>
+  <info>
+    <name>TR_FACT_CLAIMCATASTROPHE_REL</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;Custom_ETL&#x2f;Custom_Fact_Transformations</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2018&#x2f;03&#x2f;13 10&#x3a;00&#x3a;08.824</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2018&#x2f;09&#x2f;06 15&#x3a;22&#x3a;29.862</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>4SBI_DataWarehouse</name>
+    <server>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_DATABASENAME&#x7d;</database>
+    <port>-1</port>
+    <username>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_DATAWAREHOUSE_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PREFERRED_SCHEMA_NAME</code><attribute>dbo</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>4SBI_Redshift</name>
+    <server>&#x24;&#x7b;FSBI_DB_REDSHIFT_HOSTNAME&#x7d;</server>
+    <type>REDSHIFT</type>
+    <access>Native</access>
+    <database>pentaho</database>
+    <port>5439</port>
+    <username>&#x24;&#x7b;FSBI_DB_REDSHIFT_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_REDSHIFT_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_REDSHIFT.tcpKeepAlive</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5439</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>4SBI_Staging</name>
+    <server>&#x24;&#x7b;FSBI_DB_STAGING_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_STAGING_DATABASENAME&#x7d;</database>
+    <port>-1</port>
+    <username>&#x24;&#x7b;FSBI_DB_STAGING_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_STAGING_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PREFERRED_SCHEMA_NAME</code><attribute>dbo</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>CSE_BI</name>
+    <server>&#x24;&#x7b;FSBI_DB_STAGING_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>CSE_BI</database>
+    <port>-1</port>
+    <username>&#x24;&#x7b;FSBI_DB_STAGING_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_STAGING_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PREFERRED_SCHEMA_NAME</code><attribute>dbo</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Mkt01</name>
+    <server>REMOVED</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>prodCSE</database>
+    <port>-1</port>
+    <username>REMOVED</username>
+    <password>REMOVED</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>PROD-ETL</name>
+    <server>prod-etl</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>FSBI_DW_SPINN</database>
+    <port>1433</port>
+    <username>REMOVED</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10d881add3</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Prod_DB</name>
+    <server>&#x24;&#x7b;FSBI_DB_PROD_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_PROD_DATABASENAME&#x7d;</database>
+    <port>-1</port>
+    <username>&#x24;&#x7b;FSBI_DB_PROD_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_PROD_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Source_DB</name>
+    <server>&#x24;&#x7b;FSBI_DB_SOURCE_HOSTNAME&#x7d;</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;FSBI_DB_SOURCE_DATABASENAME&#x7d;</database>
+    <port>-1</port>
+    <username>&#x24;&#x7b;FSBI_DB_SOURCE_USERNAME&#x7d;</username>
+    <password>&#x24;&#x7b;FSBI_DB_SOURCE_USERPASSWORD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.prepareSQL</code><attribute>3</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MSSQLNATIVE.sendStringParametersAsUnicode</code><attribute>false</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>-1</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SQL_CONNECT</code><attribute>set nocount on&#x3b;</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  </order>
+  <step>
+    <name>Update&#x2f;insert FACT_CLAIMCATASTROPHE_REL</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>4SBI_DataWarehouse</connection>
+    <execute_each_row>N</execute_each_row>
+    <single_statement>Y</single_statement>
+    <replace_variables>Y</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>-- IMPORTANT&#x21;  This must be executed as a single statement.  Sometimes the first query returns no rows.&#xd;&#xa;-- If it inserts 0 rows into the temp table, JDBC will fail with error &#x22;The statement did not return a result set.&#x22;&#xd;&#xa;-- This is purely a JDBC&#x2f;Java oddity...because this SQL is being executed with a Java method that&#xd;&#xa;-- will error out if no rows are returned.  If they had another way to call the script using the Execute&#x28;&#x29; method&#xd;&#xa;-- instead of QueryRows&#x28;&#x29;, we wouldn&#x27;t have this problem.  In any case, executing all of it as a single&#xd;&#xa;-- statement works around the problem.&#xd;&#xa;&#xd;&#xa;set nocount on&#x3b;&#xd;&#xa;&#xd;&#xa;-- lookup the latest claim_ids and catastrophe_ids for the staging table&#xd;&#xa;&#xd;&#xa;select&#xd;&#xa;	scc.source_system&#xd;&#xa;,	scc.extract_date&#xd;&#xa;,	scc.clm_uniqueid_prefix&#xd;&#xa;,	scc.cat_code&#xd;&#xa;,	dclm.claim_id&#xd;&#xa;,	dcat.catastrophe_id&#xd;&#xa;,	scc.clmcat_manuallyadded&#xd;&#xa;,	scc.clmcat_adddate&#xd;&#xa;,	scc.clmcat_updatedby&#xd;&#xa;,	scc.clmcat_changedate&#xd;&#xa;,	scc.loaddate&#xd;&#xa;into &#x23;stg_clmcat&#xd;&#xa;from &#x24;&#x7b;FSBI_DB_STAGING_DATABASENAME&#x7d;..stg_claimcatastrophe scc&#xd;&#xa;join dim_claim dclm on&#xd;&#xa;	LEFT&#x28;dclm.clm_uniqueid,9&#x29; &#x3d; scc.clm_uniqueid_prefix&#xd;&#xa;join dim_catastrophe dcat on&#xd;&#xa;	dcat.cat_SPINNcode &#x3d; scc.cat_code&#xd;&#xa;where scc.loaddate &#x3d; &#x24;&#x7b;sql_loadDate&#x7d;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;-- delete any entries from FACT table that no longer exist in the latest staging&#xd;&#xa;-- &#x28;unless they were manually added&#x29;&#xd;&#xa;-- these are claims that were associated with a catastrophe, but now have been&#xd;&#xa;-- disassociated from that catastrophe&#xd;&#xa;delete f&#xd;&#xa;from fact_claimcatastrophe_rel f&#xd;&#xa;left join &#x23;stg_clmcat scc on&#xd;&#xa;	scc.claim_id &#x3d; f.claim_id&#xd;&#xa;and scc.catastrophe_id &#x3d; f.catastrophe_id&#xd;&#xa;where scc.claim_id is null&#xd;&#xa;and f.clmcat_manuallyadded &#x3d; 0&#x3b; -- don&#x27;t delete anything that was manually added&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;-- delete any entries from staging that already exist in the FACT table&#xd;&#xa;-- because they don&#x27;t represent a change from previous state&#xd;&#xa;-- this will help keep the size of the staging table manageable, since it&#xd;&#xa;-- will only contain deltas&#xd;&#xa;delete s&#xd;&#xa;from &#x24;&#x7b;FSBI_DB_STAGING_DATABASENAME&#x7d;..stg_claimcatastrophe s&#xd;&#xa;join &#x23;stg_clmcat scc ON&#xd;&#xa;	s.clm_uniqueid_prefix &#x3d; scc.clm_uniqueid_prefix&#xd;&#xa;and s.cat_code &#x3d; scc.cat_code&#xd;&#xa;join fact_claimcatastrophe_rel f on&#xd;&#xa;	scc.claim_id &#x3d; f.claim_id&#xd;&#xa;and scc.catastrophe_id &#x3d; f.catastrophe_id&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;-- delete it from the temp table too, since none of these need to be&#xd;&#xa;-- added to the existing table&#xd;&#xa;delete scc&#xd;&#xa;from &#x23;stg_clmcat scc&#xd;&#xa;join fact_claimcatastrophe_rel f on&#xd;&#xa;	scc.claim_id &#x3d; f.claim_id&#xd;&#xa;and scc.catastrophe_id &#x3d; f.catastrophe_id&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;-- insert any new associations that didn&#x27;t exist prior to the fact relationship table&#xd;&#xa;insert FACT_CLAIMCATASTROPHE_REL&#xd;&#xa;&#x28;claim_id,catastrophe_id,clmcat_manuallyadded,clmcat_adddate,clmcat_updatedby,clmcat_changedate&#x29;&#xd;&#xa;select&#xd;&#xa;	s.claim_id&#xd;&#xa;,	s.catastrophe_id&#xd;&#xa;,	s.clmcat_manuallyadded&#xd;&#xa;,	s.clmcat_adddate&#xd;&#xa;,	&#x27;Production ETL&#x27; as clmcat_updatedby&#xd;&#xa;,	s.clmcat_changedate&#xd;&#xa;from &#x23;stg_clmcat s&#xd;&#xa;left join FACT_CLAIMCATASTROPHE_REL f ON&#xd;&#xa;	s.claim_id &#x3d; f.claim_id&#xd;&#xa;and s.catastrophe_id &#x3d; f.catastrophe_id&#xd;&#xa;where f.claim_id is null&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;drop table &#x23;stg_clmcat&#x3b;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>339</xloc>
+      <yloc>207</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>
