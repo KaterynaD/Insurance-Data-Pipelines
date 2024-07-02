@@ -29,10 +29,14 @@ I did not receive any support or assistance from the vendor.
 **_Recognizing the limits of further improvement within Pentaho Data Integration, I developed a new ELT process using Redshift/Matillion. Data movement from Aurora to Redshift is facilitated by Fivetran._**
 
 # ETL Steps
+Notification emails are sent thru out the flow and in a case of a failure.
 
 - Set Variables
 - Test Database Connections
 - Set Load Date
+- Clear Staging (first load or development)
+- Clear DW tables (first load or development)
+- Load Defaults (first load or development)
 - Evaluate Start/No Start Automatic Load
 - Set Incremental Load date range 
 - Load Staging from AWS Aurora
